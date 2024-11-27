@@ -24,4 +24,7 @@ public class Pan {
             default: System.out.println("Numero introducido no valido."); return 0.0;
         }
     }
+ 
+
+
 }
