@@ -18,7 +18,6 @@ public class Utilidades{
     protected void textoPagar(){
         System.out.println("1. Pago con tarjeta");
         System.out.println("2. Pago en efectivo");
-        System.out.println("3. Pago en bizum ");
     }
 
     protected void textoProductoPan(){

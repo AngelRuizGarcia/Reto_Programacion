@@ -4,6 +4,7 @@ public class AplicacionPrincipal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Utilidades util0 = new Utilidades();
+        Operaciones opera0 = new Operaciones();
 
         /*
          * Modificado los objetos y he hecho un array de objetos ya que es mas facil pasar 4 por parametro
@@ -11,30 +12,30 @@ public class AplicacionPrincipal {
          * Modificado el 01.12.2024
          */
         Pan[] pan = {
-            new Pan("Pan integral",50,1.25),
-            new Pan("Barra de pan",50,0.5),
-            new Pan("Pan de campo",50,0.99),
-            new Pan("Pan de la abuela",50,0.99),
+            new Pan("Pan integral",10,1.25),
+            new Pan("Barra de pan",10,0.5),
+            new Pan("Pan de campo",10,0.99),
+            new Pan("Pan de la abuela",10,0.99),
         };
         Bebidas[] bebidas = {
-            new Bebidas("Nestea",50,1.99),
-            new Bebidas("Agua",50,0.99),
-            new Bebidas("Coca-Cola",50,1.99),
-            new Bebidas("Fanta de limon",50,1.99),
+            new Bebidas("Nestea",20,1.99),
+            new Bebidas("Agua",20,0.99),
+            new Bebidas("Coca-Cola",20,1.99),
+            new Bebidas("Fanta de limon",20,1.99),
         };
         Pasteles[] pasteles = {
-            new Pasteles("Pastel de carne",50,3.5),
-            new Pasteles("Pastel de fresa",50,2.99),
-            new Pasteles("Pastel de chocolate",50,2.99),
-            new Pasteles("Pastel de vainilla",50,2.49),
+            new Pasteles("Pastel de carne",10,3.5),
+            new Pasteles("Pastel de fresa",10,2.99),
+            new Pasteles("Pastel de chocolate",10,2.99),
+            new Pasteles("Pastel de vainilla",10,2.49),
         };
         Pizzas[] pizza = {
-            new Pizzas("Pizza 4 Estaciones",50,3.19),
-            new Pizzas("Pizza Jamon y Queso",50,2.69),
-            new Pizzas("Pizza Carbonara",50,2.99),
-            new Pizzas("Pizza de Kebab",50,2.49),
+            new Pizzas("Pizza 4 Estaciones",10,3.19),
+            new Pizzas("Pizza Jamon y Queso",10,2.69),
+            new Pizzas("Pizza Carbonara",10,2.99),
+            new Pizzas("Pizza de Kebab",10,2.49),
         };
-        Operaciones opera0 = new Operaciones();
+
         menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
 
     }
@@ -44,16 +45,33 @@ public class AplicacionPrincipal {
     util0.textoPrincipal();
     int opcion = sc.nextInt();
     switch (opcion) {
-        case 1: break;
-        case 2: break;
-        case 3: break;
-        case 4: break;
+        case 1: menuPanes(util0, sc, pan); break;
+        case 2: menuPizzas(util0, sc, pizza);break;
+        case 3: menuPasteles(util0, sc, pasteles);break;
+        case 4: menuBebidas(util0, sc, bebidas);break;
         case 5: break;
         
         default: System.out.println("Numero introducido no valido."); break;
     }
     }
-    protected static void menuPanes(){
-    
+    protected static void menuPanes(Utilidades util0, Scanner sc, Pan [] pan){
+        util0.textoProductoPan();
     }
+
+    protected static void menuPizzas(Utilidades util0, Scanner sc, Pizzas [] pizza){
+        util0.textoProductoPizza();
+    }
+
+    protected static void menuPasteles(Utilidades util0, Scanner sc, Pasteles [] pasteles){
+        util0.textoProductoPasteles();
+    }
+
+    protected static void menuBebidas(Utilidades util0, Scanner sc, Bebidas [] bebidas){
+        util0.textoProductoBebidas();
+    }
+
+    protected static void menuPagar(Utilidades util0, Scanner sc){
+        util0.textoPagar();
+    }
+
 }
