@@ -36,34 +36,46 @@ public class AplicacionPrincipal {
             new Pizzas("Pizza de Kebab",10,2.49,false,165.3,379),
         };
 
-
+        util0.textoPrincipio();
         menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
 
     }
 
     protected static void menuPrincipal(Utilidades util0, Scanner sc, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles, Pizzas[] pizza){
-    util0.textoPrincipio();
     util0.textoPrincipal();
     switch (util0.pedirNumeroEntero(sc)) {
-        case 1: menuPanes(util0, sc, pan); break;
-        case 2: menuPizzas(util0, sc, pizza); break;
-        case 3: menuPasteles(util0, sc, pasteles); break;
-        case 4: menuBebidas(util0, sc, bebidas); break;
+        case 1: menuPanes(util0, sc, pan, bebidas, pasteles, pizza); break;
+        case 2: menuPizzas(util0, sc, pizza, pan, bebidas, pasteles); break;
+        case 3: menuPasteles(util0, sc, pizza, pan, bebidas, pasteles); break;
+        case 4: menuBebidas(util0, sc, pizza, pan, bebidas, pasteles); break;
         case 5: menuPagar(util0, sc); break;
         
         default: System.out.println("Numero introducido no valido."); break;
     }
     }
-    protected static void menuPanes(Utilidades util0, Scanner sc, Pan[] pan){
+    protected static void menuPanes(Utilidades util0, Scanner sc, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles, Pizzas[] pizza ){
         util0.textoProductoPan();
         switch (util0.pedirNumeroEntero(sc)) {
             case 1:
                 util0.textoCantidad();
-                pan[0].cantidadRestante += -(util0.pedirNumeroEntero(sc));
-                break;
-            case 2: break;
-            case 3: break;
-            case 4: break;
+                pan[0].cantidadRestante = util0.cantidadRestante(sc, pan[0].cantidadProducto);
+                menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
+            break;
+            case 2:
+                util0.textoCantidad();
+                pan[1].cantidadRestante = util0.cantidadRestante(sc, pan[1].cantidadProducto);
+                menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
+            break;
+            case 3:
+                util0.textoCantidad();
+                pan[2].cantidadRestante = util0.cantidadRestante(sc, pan[2].cantidadProducto);
+                menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza); 
+            break;
+            case 4: 
+                util0.textoCantidad();
+                pan[3].cantidadRestante = util0.cantidadRestante(sc, pan[3].cantidadProducto);
+                menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
+            break;
             case 5: break;
             case 6: break;
             
@@ -72,13 +84,29 @@ public class AplicacionPrincipal {
 
     }
 
-    protected static void menuPizzas(Utilidades util0, Scanner sc, Pizzas[] pizza){
+    protected static void menuPizzas(Utilidades util0, Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles){
         util0.textoProductoPizza();
         switch (util0.pedirNumeroEntero(sc)) {
-            case 1: break;
-            case 2: break;
-            case 3: break;
-            case 4: break;
+            case 1:
+                util0.textoCantidad();
+                pizza[0].cantidadRestante = util0.cantidadRestante(sc, pizza[0].cantidadProducto);
+                menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
+            break;
+            case 2:
+                util0.textoCantidad();
+                pizza[1].cantidadRestante = util0.cantidadRestante(sc, pizza[1].cantidadProducto);
+                menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza); 
+            break; 
+            case 3:
+                util0.textoCantidad();
+                pizza[2].cantidadRestante = util0.cantidadRestante(sc, pizza[2].cantidadProducto);
+                menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza); 
+            break;
+            case 4: 
+                util0.textoCantidad();
+                pizza[3].cantidadRestante = util0.cantidadRestante(sc, pizza[3].cantidadProducto);
+                menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza); 
+            break;
             case 5: break;
             case 6: break;
             
@@ -86,13 +114,29 @@ public class AplicacionPrincipal {
         }
     }
 
-    protected static void menuPasteles(Utilidades util0, Scanner sc, Pasteles[] pasteles){
+    protected static void menuPasteles(Utilidades util0, Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles){
         util0.textoProductoPasteles();
         switch (util0.pedirNumeroEntero(sc)) {
-            case 1: break;
-            case 2: break;
-            case 3: break;
-            case 4: break;
+            case 1:
+                util0.textoCantidad();
+                pasteles[0].cantidadRestante = util0.cantidadRestante(sc, pasteles[0].cantidadProducto);
+                menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza); 
+            break;
+            case 2: 
+                util0.textoCantidad();
+                pasteles[1].cantidadRestante = util0.cantidadRestante(sc, pasteles[1].cantidadProducto);
+                menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza); 
+            break;
+            case 3: 
+                util0.textoCantidad();
+                pasteles[2].cantidadRestante = util0.cantidadRestante(sc, pasteles[2].cantidadProducto);
+                menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza); 
+            break;
+            case 4: 
+                util0.textoCantidad();
+                pasteles[3].cantidadRestante = util0.cantidadRestante(sc, pasteles[3].cantidadProducto);
+                menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza); 
+            break;
             case 5: break;
             case 6: break;
             
@@ -100,13 +144,29 @@ public class AplicacionPrincipal {
         }
     }
 
-    protected static void menuBebidas(Utilidades util0, Scanner sc, Bebidas[] bebidas){
+    protected static void menuBebidas(Utilidades util0, Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles){
         util0.textoProductoBebidas();
         switch (util0.pedirNumeroEntero(sc)) {
-            case 1: break;
-            case 2: break;
-            case 3: break;
-            case 4: break;
+            case 1:
+                util0.textoCantidad();
+                bebidas[0].cantidadRestante = util0.cantidadRestante(sc, bebidas[0].cantidadProducto);
+                menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza); 
+            break;
+            case 2:
+                util0.textoCantidad();
+                bebidas[1].cantidadRestante = util0.cantidadRestante(sc, bebidas[1].cantidadProducto);
+                menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza); 
+            break;
+            case 3: 
+                util0.textoCantidad();
+                bebidas[2].cantidadRestante = util0.cantidadRestante(sc, bebidas[2].cantidadProducto);
+                menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza); 
+            break;
+            case 4: 
+                util0.textoCantidad();
+                bebidas[3].cantidadRestante = util0.cantidadRestante(sc, bebidas[3].cantidadProducto);
+                menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza); 
+            break;
             case 5: break;
             case 6: break;
             
