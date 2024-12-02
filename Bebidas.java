@@ -5,15 +5,24 @@ public class Bebidas {
     protected int cantidadRestante;
     protected double precioProducto;
 
+    //atrb opcionales
+    protected int cantidadML; 
+    protected int Kcal;
+    
+
+
     public Bebidas() {
     }
 
 
-    public Bebidas(String nombreProducto, int cantidadProducto, double precioProducto) {
+    public Bebidas(String nombreProducto, int cantidadProducto, double precioProducto, int cantidadML, int Kcal) {
         this.nombreProducto = nombreProducto;
         this.cantidadProducto = cantidadProducto;
-        this.precioProducto = precioProducto;
         this.cantidadRestante = cantidadProducto;
+        this.precioProducto = precioProducto;
+        this.cantidadML = cantidadML;
+        this.Kcal = Kcal;
     }
+
 
 }

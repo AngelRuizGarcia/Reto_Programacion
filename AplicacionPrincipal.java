@@ -12,28 +12,28 @@ public class AplicacionPrincipal {
          * Modificado el 01.12.2024
          */
         Pan[] pan = {
-            new Pan("Pan integral",10,1.25),
-            new Pan("Barra de pan",10,0.5),
-            new Pan("Pan de campo",10,0.99),
-            new Pan("Pan de la abuela",10,0.99),
+            new Pan("Pan integral",10,1.25,false,240.0,183),
+            new Pan("Barra de pan",10,0.5,true,60.0,249),
+            new Pan("Pan de campo",10,0.99,true,220.0,70),
+            new Pan("Pan de la abuela",10,0.99,false,123.3,90),
         };
         Bebidas[] bebidas = {
-            new Bebidas("Nestea",20,1.99),
-            new Bebidas("Agua",20,0.99),
-            new Bebidas("Coca-Cola",20,1.99),
-            new Bebidas("Fanta de limon",20,1.99),
+            new Bebidas("Nestea",20,1.99,330,20),
+            new Bebidas("Agua",20,0.99,330,0),
+            new Bebidas("Coca-Cola",20,1.99,330,134),
+            new Bebidas("Fanta de limon",20,1.99,330,89),
         };
         Pasteles[] pasteles = {
-            new Pasteles("Pastel de carne",10,3.5),
-            new Pasteles("Pastel de fresa",10,2.99),
-            new Pasteles("Pastel de chocolate",10,2.99),
-            new Pasteles("Pastel de vainilla",10,2.49),
+            new Pasteles("Pastel de carne",10,3.5,true,77.6,542),
+            new Pasteles("Pastel de fresa",10,2.99,true,128,357),
+            new Pasteles("Pastel de chocolate",10,2.99,true,96.6,785),
+            new Pasteles("Pastel de vainilla",10,2.49,true,283.6,645),
         };
         Pizzas[] pizza = {
-            new Pizzas("Pizza 4 Estaciones",10,3.19),
-            new Pizzas("Pizza Jamon y Queso",10,2.69),
-            new Pizzas("Pizza Carbonara",10,2.99),
-            new Pizzas("Pizza de Kebab",10,2.49),
+            new Pizzas("Pizza 4 Estaciones",10,3.19,true,234.4,468),
+            new Pizzas("Pizza Jamon y Queso",10,2.69,true,137.0,587),
+            new Pizzas("Pizza Carbonara",10,2.99,true,234.3,454),
+            new Pizzas("Pizza de Kebab",10,2.49,false,165.3,379),
         };
 
         menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
