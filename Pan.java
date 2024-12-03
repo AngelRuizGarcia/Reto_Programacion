@@ -26,5 +26,15 @@ public class Pan {
         this.Kcal = Kcal;
     }
 
+    protected void actualizarCantidadRestante(int cantiRestante){
 
+        this.cantidadRestante = cantiRestante;
+    }
+
+
+    protected void textoPanMostrarInformacion(){
+        System.out.println("Aquí tienes la informacion del pan:");
+        System.out.println();
+        System.out.println("Pan ");
+    }
 }

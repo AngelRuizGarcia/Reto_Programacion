@@ -58,7 +58,8 @@ public class AplicacionPrincipal {
         switch (util0.pedirNumeroEntero(sc)) {
             case 1:
                 util0.textoCantidad();
-                pan[0].cantidadRestante = util0.cantidadRestante(sc, pan[0].cantidadProducto);
+                int num = util0.cantidadRestante(sc, pan[0].cantidadRestante);
+                pan[0].actualizarCantidadRestante(num);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             case 2:

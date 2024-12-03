@@ -24,5 +24,9 @@ public class Pizzas {
         this.peso = peso;
         this.Kcal = Kcal;
     }
+    protected void actualizarCantidadRestante(int cantiRestante){
+
+        this.cantidadRestante = cantiRestante;
+    }
 
 }

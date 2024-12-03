@@ -24,5 +24,9 @@ public class Pasteles {
         this.Kcal = Kcal;
     }
 
-    
+    protected void actualizarCantidadRestante(int cantiRestante){
+
+        this.cantidadRestante = cantiRestante;
+    }
+
 }

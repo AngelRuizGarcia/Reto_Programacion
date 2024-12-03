@@ -23,6 +23,10 @@ public class Bebidas {
         this.cantidadML = cantidadML;
         this.Kcal = Kcal;
     }
+    protected void actualizarCantidadRestante(int cantiRestante){
+
+        this.cantidadRestante = cantiRestante;
+    }
 
 
 }
