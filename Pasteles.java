@@ -5,6 +5,8 @@ public class Pasteles {
     protected int cantidadRestante;
     protected double precioProducto;
 
+    protected double precioTotal;
+
     //atrb opcionales
     protected boolean llevaGluten; 
     protected double peso;
