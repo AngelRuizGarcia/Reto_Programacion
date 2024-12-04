@@ -29,4 +29,12 @@ public class Pizzas {
         this.cantidadRestante = cantiRestante;
     }
 
+    protected void textoPizzasMostrarInformacion(){
+        System.out.println(nombreProducto);
+        System.out.println("Lleva Jamon? " + llevaJamon);
+        System.out.println("peso: " + peso);
+        System.out.println("kcalorias: " + Kcal);
+
+    }
+
 }
