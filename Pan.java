@@ -33,8 +33,10 @@ public class Pan {
 
 
     protected void textoPanMostrarInformacion(){
-        System.out.println("Aquí tienes la informacion del pan:");
-        System.out.println();
-        System.out.println("Pan ");
+        System.out.println(nombreProducto);
+        System.out.println("Lleva gluten? " + llevaGluten);
+        System.out.println("peso: " + peso);
+        System.out.println("Kcalorias: " + Kcal);
+
     }
 }
