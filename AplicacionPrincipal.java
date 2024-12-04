@@ -4,7 +4,6 @@ public class AplicacionPrincipal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Utilidades util0 = new Utilidades();
-        Operaciones opera0 = new Operaciones();
 
         /*
          * Modificado los objetos y he hecho un array de objetos ya que es mas facil pasar 4 por parametro
@@ -62,8 +61,6 @@ public class AplicacionPrincipal {
                 int numCase1 = util0.cantidadRestante(sc, pan[0].cantidadRestante, numUsuario);
                 pan[0].actualizarCantidadRestante(numCase1);
                 pan[0].calculoPrecioTotal(numUsuario);
-                System.out.println("STOCK:" + numCase1);
-                System.out.println("PRECIO:" + pan[0].precioTotal);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             case 2:

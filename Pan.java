@@ -43,13 +43,18 @@ public class Pan {
     }
 
     protected double calculoPrecioTotal(int cantidadUsuario){
-        if (cantidadRestante > cantidadUsuario) {
-            return this.precioTotal;
-        }else if(cantidadUsuario >= cantidadRestante){
+        if (cantidadRestante < 0){
+            cantidadRestante = 0;
+            return 0;
+        }else if (cantidadUsuario >= cantidadRestante) {
             return this.precioTotal += (precioProducto*cantidadUsuario);
         }else {
             return 0;
         }
+
+        /*
+         * 
+         */
         
     }
 }

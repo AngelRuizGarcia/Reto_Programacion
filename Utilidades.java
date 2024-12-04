@@ -90,7 +90,7 @@ public class Utilidades{
            return cantidadProducto += -(numeroUsuario);
         } else {
             System.out.println("No queda stock, lo sentimos");
-            return 0;
+            return cantidadProducto += -(numeroUsuario);
         }
         
     }
