@@ -183,11 +183,14 @@ public class AplicacionPrincipal {
             break;
             case 4: 
                 util0.textoCantidad();
-                //int numCase4 = util0.cantidadRestante(sc, bebidas[3].cantidadRestante);
-                //bebidas[3].actualizarCantidadRestante(numCase4);
+                int numCase4 = util0.cantidadRestante(sc, bebidas[3].cantidadRestante);
+                bebidas[3].actualizarCantidadRestante(numCase4);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
-            case 5: break;
+            case 5:
+                util0.textoProductoBebidasMasInformacion();
+                menuBebidasMasInformacion(util0, sc, pizza, pan, bebidas, pasteles);
+             break;
             case 6: break;
             
             default: System.out.println("Numero introducido no valido."); break;
@@ -201,6 +204,30 @@ public class AplicacionPrincipal {
             case 2: break;
             
             default: System.out.println("Numero introducido no valido."); break;
+        }
+    }
+
+    protected static void menuBebidasMasInformacion(Utilidades util0,Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles ){
+        switch (util0.pedirNumeroEntero(sc)){
+            case 1:
+                bebidas[0].textoBebidasMostrarInformacion();
+                menuBebidas(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
+            case 2: 
+                bebidas[1].textoBebidasMostrarInformacion();
+                menuBebidas(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
+            case 3:
+                bebidas[2].textoBebidasMostrarInformacion();
+                menuBebidas(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
+            case 4: 
+                bebidas[3].textoBebidasMostrarInformacion();
+                menuBebidas(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
+
+            default: System.out.println("Numero introducido no valido. "); break;
+
         }
     }
 

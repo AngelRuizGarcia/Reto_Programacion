@@ -32,6 +32,7 @@ public class Pasteles {
     }
 
     protected void textoPastelesMostrarInformacion(){
+        System.out.println("----");
         System.out.println(nombreProducto);
         System.out.println("Lleva gluten? " + llevaGluten);
         System.out.println("peso: " + peso);

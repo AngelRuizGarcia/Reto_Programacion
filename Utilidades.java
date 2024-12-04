@@ -25,7 +25,7 @@ public class Utilidades{
 
     protected void textoProductoPan(){
         System.out.println();
-        System.out.println("Menu de Opciones");
+        System.out.println("Menu de Panes");
         System.out.println("1. Pan integral - 1.25 E");
         System.out.println("2. Barra de pan - 0.5 E");
         System.out.println("3. Pan de campo - 0.99 E");
@@ -36,7 +36,7 @@ public class Utilidades{
     }
     protected void textoProductoBebidas(){
         System.out.println();
-        System.out.println("Menu de Opciones");
+        System.out.println("Menu de Bebidas");
         System.out.println("1. Nestea - 1.99 E");
         System.out.println("2. Agua - 0.99 E");
         System.out.println("3. Coca-Cola - 1.9 9E");
@@ -47,7 +47,7 @@ public class Utilidades{
     }
     protected void textoProductoPasteles(){
         System.out.println();
-        System.out.println("Menu de Opciones");
+        System.out.println("Menu de Pasteles");
         System.out.println("1. Pastel de carne - 3.5 E");
         System.out.println("2. Pastel de fresa - 2.99 E");
         System.out.println("3. Pastel de chocolate - 2.99 E");
@@ -58,7 +58,7 @@ public class Utilidades{
     }
     protected void textoProductoPizza(){
         System.out.println();
-        System.out.println("Menu de Opciones");
+        System.out.println("Menu de Pizzas");
         System.out.println("1. Pizza 4 Estaciones - 3.19 E");
         System.out.println("2. Pizza Jamon y Queso - 2.69 E");
         System.out.println("3. Pizza Carbonara - 2.99 E");
@@ -71,6 +71,50 @@ public class Utilidades{
     protected void textoCantidad(){
         System.out.println("Cuanta cantidad quieres?");
         System.out.print("Introduce la cantidad: ");
+    }
+
+    protected void textoProductoBebidasMasInformacion(){
+        System.out.println("----");
+        System.out.println("Sobre que quieres mas informacion?");
+        System.out.println();
+        System.out.println("1. Nestea");
+        System.out.println("2. Agua");
+        System.out.println("3. Coca-Cola");
+        System.out.println("4. Fanta de limon");
+        System.out.print("Introduce una opción: ");
+    }
+
+    protected void textoProductoPizzasMasInformacion(){
+        System.out.println("----");
+        System.out.println("Sobre que quieres mas informacion?");
+        System.out.println();
+        System.out.println("1. Pizza 4 estaciones");
+        System.out.println("2. Pizza Jamon y Queso");
+        System.out.println("3. Pizza Carbonara");
+        System.out.println("4. Pizza de Kebab");
+        System.out.print("Introduce una opción: ");
+    }
+
+    protected void textoProductoPastelesMasInformacion(){
+        System.out.println("----");
+        System.out.println("Sobre que quieres mas informacion?");
+        System.out.println();
+        System.out.println("1. Pastel de carne");
+        System.out.println("2. Pastel de fresa");
+        System.out.println("3. Pastel de chocolate");
+        System.out.println("4. Pastel de vainilla");
+        System.out.print("Introduce una opción: ");
+    }
+
+    protected void textoProductoPanesMasInformacion(){
+        System.out.println("----");
+        System.out.println("Sobre que quieres mas informacion?");
+        System.out.println();
+        System.out.println("1. Pan integral");
+        System.out.println("2. Barra de pan");
+        System.out.println("3. Pan de campo");
+        System.out.println("4. Pan de la abuela");
+        System.out.print("Introduce una opción: ");
     }
 
     protected int pedirNumeroEntero(Scanner sc){
@@ -93,5 +137,18 @@ public class Utilidades{
             return 0;
         }
         
+    
+    }
+
+    protected int cantidadRestante (Scanner sc, int cantidadProducto){
+        int numeroUsuario = 1; 
+        if (numeroUsuario <= cantidadProducto) {
+           return cantidadProducto += -(numeroUsuario);
+        } else {
+            System.out.println("No queda stock, lo sentimos");
+            return 0;
+        }
     }
     }
+
+    

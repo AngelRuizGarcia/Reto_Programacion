@@ -6,7 +6,7 @@ public class Bebidas {
     protected double precioProducto;
 
     protected double precioTotal;
-    
+
     //atrb opcionales
     protected int cantidadML; 
     protected int Kcal;
@@ -30,7 +30,8 @@ public class Bebidas {
         this.cantidadRestante = cantiRestante;
     }
     protected void textoBebidasMostrarInformacion(){
-        System.out.println(nombreProducto);
+        System.out.println("----");
+        System.out.println("Nombre: " + nombreProducto);
         System.out.println("Cantidad de ml? " + cantidadML);
         System.out.println("kcalorias: " + Kcal);
 
