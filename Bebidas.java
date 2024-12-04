@@ -5,6 +5,8 @@ public class Bebidas {
     protected int cantidadRestante;
     protected double precioProducto;
 
+    protected double precioTotal;
+    
     //atrb opcionales
     protected int cantidadML; 
     protected int Kcal;

@@ -5,6 +5,8 @@ public class Pizzas {
     protected int cantidadRestante;
     protected double precioProducto;
 
+    protected double precioTotal;
+
     //atrb opcionales
     protected boolean llevaJamon; 
     protected double peso;
