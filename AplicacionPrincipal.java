@@ -58,26 +58,30 @@ public class AplicacionPrincipal {
         switch (util0.pedirNumeroEntero(sc)) {
             case 1:
                 util0.textoCantidad();
-                int numCase1 = util0.cantidadRestante(sc, pan[0].cantidadRestante);
+                int numUsuario = util0.pedirNumeroEntero(sc);
+                int numCase1 = util0.cantidadRestante(sc, pan[0].cantidadRestante, numUsuario);
                 pan[0].actualizarCantidadRestante(numCase1);
+                pan[0].calculoPrecioTotal(numUsuario);
+                System.out.println("STOCK:" + numCase1);
+                System.out.println("PRECIO:" + pan[0].precioTotal);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             case 2:
                 util0.textoCantidad();
-                int numCase2 = util0.cantidadRestante(sc, pan[1].cantidadRestante);
-                pan[1].actualizarCantidadRestante(numCase2);
+                //int numCase2 = util0.cantidadRestante(sc, pan[1].cantidadRestante);
+                //pan[1].actualizarCantidadRestante(numCase2);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             case 3:
                 util0.textoCantidad();
-                int numCase3 = util0.cantidadRestante(sc, pan[2].cantidadRestante);
-                pan[2].actualizarCantidadRestante(numCase3);
+                //int numCase3 = util0.cantidadRestante(sc, pan[2].cantidadRestante);
+                //pan[2].actualizarCantidadRestante(numCase3);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             case 4: 
                 util0.textoCantidad();
-                int numCase4 = util0.cantidadRestante(sc, pan[3].cantidadRestante);
-                pan[3].actualizarCantidadRestante(numCase4);
+                //int numCase4 = util0.cantidadRestante(sc, pan[3].cantidadRestante);
+                //pan[3].actualizarCantidadRestante(numCase4);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             case 5: break;
@@ -93,26 +97,26 @@ public class AplicacionPrincipal {
         switch (util0.pedirNumeroEntero(sc)) {
             case 1:
                 util0.textoCantidad();
-                int numCase1 = util0.cantidadRestante(sc, pizza[0].cantidadRestante);
-                pizza[0].actualizarCantidadRestante(numCase1);
+                //int numCase1 = util0.cantidadRestante(sc, pizza[0].cantidadRestante);
+                //pizza[0].actualizarCantidadRestante(numCase1);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             case 2:
                 util0.textoCantidad();
-                int numCase2 = util0.cantidadRestante(sc, pizza[1].cantidadRestante);
-                pizza[1].actualizarCantidadRestante(numCase2);
+                //int numCase2 = util0.cantidadRestante(sc, pizza[1].cantidadRestante);
+                //pizza[1].actualizarCantidadRestante(numCase2);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break; 
             case 3:
                 util0.textoCantidad();
-                int numCase3 = util0.cantidadRestante(sc, pizza[2].cantidadRestante);
-                pizza[2].actualizarCantidadRestante(numCase3);
+                //int numCase3 = util0.cantidadRestante(sc, pizza[2].cantidadRestante);
+                //pizza[2].actualizarCantidadRestante(numCase3);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             case 4: 
                 util0.textoCantidad();
-                int numCase4 = util0.cantidadRestante(sc, pizza[3].cantidadRestante);
-                pizza[3].actualizarCantidadRestante(numCase4);
+                //int numCase4 = util0.cantidadRestante(sc, pizza[3].cantidadRestante);
+                //pizza[3].actualizarCantidadRestante(numCase4);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             case 5: break;
@@ -127,26 +131,26 @@ public class AplicacionPrincipal {
         switch (util0.pedirNumeroEntero(sc)) {
             case 1:
                 util0.textoCantidad();
-                int numCase1 = util0.cantidadRestante(sc, pasteles[0].cantidadRestante);
-                pasteles[0].actualizarCantidadRestante(numCase1);
+                //int numCase1 = util0.cantidadRestante(sc, pasteles[0].cantidadRestante);
+                //pasteles[0].actualizarCantidadRestante(numCase1);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             case 2: 
                 util0.textoCantidad();
-                int numCase2 = util0.cantidadRestante(sc, pasteles[1].cantidadRestante);
-                pasteles[1].actualizarCantidadRestante(numCase2);
+                //int numCase2 = util0.cantidadRestante(sc, pasteles[1].cantidadRestante);
+                //pasteles[1].actualizarCantidadRestante(numCase2);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             case 3: 
                 util0.textoCantidad();
-                int numCase3 = util0.cantidadRestante(sc, pasteles[2].cantidadRestante);
-                pasteles[2].actualizarCantidadRestante(numCase3);
+                //int numCase3 = util0.cantidadRestante(sc, pasteles[2].cantidadRestante);
+                //pasteles[2].actualizarCantidadRestante(numCase3);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             case 4: 
                 util0.textoCantidad();
-                int numCase4 = util0.cantidadRestante(sc, pasteles[3].cantidadRestante);
-                pasteles[3].actualizarCantidadRestante(numCase4);
+                //int numCase4 = util0.cantidadRestante(sc, pasteles[3].cantidadRestante);
+                //pasteles[3].actualizarCantidadRestante(numCase4);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             case 5: break;
@@ -161,26 +165,26 @@ public class AplicacionPrincipal {
         switch (util0.pedirNumeroEntero(sc)) {
             case 1:
                 util0.textoCantidad();
-                int numCase1 = util0.cantidadRestante(sc, bebidas[0].cantidadRestante);
-                bebidas[0].actualizarCantidadRestante(numCase1);
+                //int numCase1 = util0.cantidadRestante(sc, bebidas[0].cantidadRestante);
+                ///bebidas[0].actualizarCantidadRestante(numCase1);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             case 2:
                 util0.textoCantidad();
-                int numCase2 = util0.cantidadRestante(sc, bebidas[1].cantidadRestante);
-                bebidas[1].actualizarCantidadRestante(numCase2);
+                //int numCase2 = util0.cantidadRestante(sc, bebidas[1].cantidadRestante);
+                //bebidas[1].actualizarCantidadRestante(numCase2);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             case 3: 
                 util0.textoCantidad();
-                int numCase3 = util0.cantidadRestante(sc, bebidas[2].cantidadRestante);
-                bebidas[2].actualizarCantidadRestante(numCase3);
+                //int numCase3 = util0.cantidadRestante(sc, bebidas[2].cantidadRestante);
+                //bebidas[2].actualizarCantidadRestante(numCase3);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             case 4: 
                 util0.textoCantidad();
-                int numCase4 = util0.cantidadRestante(sc, bebidas[3].cantidadRestante);
-                bebidas[3].actualizarCantidadRestante(numCase4);
+                //int numCase4 = util0.cantidadRestante(sc, bebidas[3].cantidadRestante);
+                //bebidas[3].actualizarCantidadRestante(numCase4);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             case 5: break;

@@ -5,6 +5,8 @@ public class Pan {
     protected int cantidadRestante;
     protected double precioProducto;
 
+    protected double precioTotal;
+
     //atrb opcionales
     protected boolean llevaGluten; 
     protected double peso;
@@ -38,5 +40,16 @@ public class Pan {
         System.out.println("peso: " + peso);
         System.out.println("Kcalorias: " + Kcal);
 
+    }
+
+    protected double calculoPrecioTotal(int cantidadUsuario){
+        if (cantidadRestante > cantidadUsuario) {
+            return this.precioTotal;
+        }else if(cantidadUsuario >= cantidadRestante){
+            return this.precioTotal += (precioProducto*cantidadUsuario);
+        }else {
+            return 0;
+        }
+        
     }
 }

@@ -85,14 +85,13 @@ public class Utilidades{
         return sc.nextLine();
     }
  
-    protected int cantidadRestante (Scanner sc, int cantidadProducto){
-        int numeroUsuario = pedirNumeroEntero(sc);
+    protected int cantidadRestante (Scanner sc, int cantidadProducto, int numeroUsuario){
         if (numeroUsuario <= cantidadProducto) {
            return cantidadProducto += -(numeroUsuario);
         } else {
             System.out.println("No queda stock, lo sentimos");
             return 0;
-        } 
+        }
         
     }
     }
