@@ -4,10 +4,10 @@ public class Utilidades{
     //texto de inicio del programa
     protected void textoPrincipio (){
         System.out.println("Bienvenido al programa del tono la ines ");
-        System.out.println();
     }
     //texto principal/inicial del programa
     protected void textoPrincipal(){
+        System.out.println();
         System.out.println("Menu de Opciones");
         System.out.println("1. Panes");
         System.out.println("2. Pizzas");
