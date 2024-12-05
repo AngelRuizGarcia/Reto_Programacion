@@ -81,7 +81,10 @@ public class AplicacionPrincipal {
                 //pan[3].actualizarCantidadRestante(numCase4);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
-            case 5: break;
+            case 5:
+                util0.textoProductoPanesMasInformacion();
+                menuPanMasInformacion(util0, sc, pizza, pan, bebidas, pasteles);
+             break;
             case 6: break;
             
             default: System.out.println("Numero introducido no valido."); break;
@@ -116,7 +119,10 @@ public class AplicacionPrincipal {
                 //pizza[3].actualizarCantidadRestante(numCase4);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
-            case 5: break;
+            case 5: 
+                util0.textoProductoPizzasMasInformacion();
+                menuPizzasMasInformacion(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
             case 6: break;
             
             default: System.out.println("Numero introducido no valido."); break;
@@ -150,7 +156,10 @@ public class AplicacionPrincipal {
                 //pasteles[3].actualizarCantidadRestante(numCase4);
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
-            case 5: break;
+            case 5: 
+                util0.textoProductoPastelesMasInformacion();
+                menuPastelesMasInformacion(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
             case 6: break;
             
             default: System.out.println("Numero introducido no valido."); break;
@@ -221,6 +230,78 @@ public class AplicacionPrincipal {
             case 4: 
                 bebidas[3].textoBebidasMostrarInformacion();
                 menuBebidas(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
+
+            default: System.out.println("Numero introducido no valido. "); break;
+
+        }
+    }
+
+    protected static void menuPizzasMasInformacion(Utilidades util0,Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles ){
+        switch (util0.pedirNumeroEntero(sc)){
+            case 1:
+                pizza[0].textoPizzasMostrarInformacion();
+                menuPizzas(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
+            case 2: 
+                pizza[1].textoPizzasMostrarInformacion();
+                menuPizzas(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
+            case 3:
+                pizza[2].textoPizzasMostrarInformacion();
+                menuPizzas(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
+            case 4: 
+                pizza[3].textoPizzasMostrarInformacion();
+                menuPizzas(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
+
+            default: System.out.println("Numero introducido no valido. "); break;
+
+        }
+    }
+
+    protected static void menuPastelesMasInformacion(Utilidades util0,Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles ){
+        switch (util0.pedirNumeroEntero(sc)){
+            case 1:
+                pasteles[0].textoPastelesMostrarInformacion();
+                menuPasteles(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
+            case 2: 
+                pasteles[1].textoPastelesMostrarInformacion();
+                menuPasteles(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
+            case 3:
+                pasteles[2].textoPastelesMostrarInformacion();
+                menuPasteles(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
+            case 4: 
+                pasteles[3].textoPastelesMostrarInformacion();
+                menuPasteles(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
+
+            default: System.out.println("Numero introducido no valido. "); break;
+
+        }
+    }
+
+    protected static void menuPanMasInformacion(Utilidades util0,Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles ){
+        switch (util0.pedirNumeroEntero(sc)){
+            case 1:
+                pan[0].textoPanMostrarInformacion();
+                menuPanes(util0, sc, pan, bebidas, pasteles, pizza);
+            break;
+            case 2: 
+                pan[1].textoPanMostrarInformacion();
+                menuPanes(util0, sc, pan, bebidas, pasteles, pizza);
+            break;
+            case 3:
+                pan[2].textoPanMostrarInformacion();
+                menuPanes(util0, sc, pan, bebidas, pasteles, pizza);
+            break;
+            case 4: 
+                pan[3].textoPanMostrarInformacion();
+                menuPanes(util0, sc, pan, bebidas, pasteles, pizza);
             break;
 
             default: System.out.println("Numero introducido no valido. "); break;

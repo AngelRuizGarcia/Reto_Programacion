@@ -33,7 +33,7 @@ public class Pizzas {
 
     protected void textoPizzasMostrarInformacion(){
         System.out.println("----");
-        System.out.println(nombreProducto);
+        System.out.println("Nombre: " + nombreProducto);
         System.out.println("Lleva Jamon? " + llevaJamon);
         System.out.println("peso: " + peso);
         System.out.println("kcalorias: " + Kcal);
