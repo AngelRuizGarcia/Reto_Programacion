@@ -206,6 +206,7 @@ public class Utilidades{
         for (int i = 0; i < 4; i++) {
             suma += pan[i].precioTotal + bebidas[i].precioTotal + pizza[i].precioTotal + pastel[i].precioTotal;
         }
+        System.out.println("Total ha pagar: " + suma);
         return suma;
     }
 

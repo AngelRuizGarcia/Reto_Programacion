@@ -255,9 +255,11 @@ public class AplicacionPrincipal {
             case 1: break;
             case 2: 
                 util0.textoResumenPago(pan, bebidas, pizza, pastel);
+
+                double total = util0.pagarConEfectivo(pan, bebidas, pizza, pastel);
+                
                 util0.textoPagoConEfectivo();
                 double efectivoUsuario = util0.pedirNumeroDouble(sc);
-                double total = util0.pagarConEfectivo(pan, bebidas, pizza, pastel);
 
                 if(!util0.calculoVueltaEfectivo(efectivoUsuario, total)){
                     menuPagar(util0, sc, pizza, pan, bebidas, pastel);
