@@ -19,6 +19,7 @@ public class Utilidades{
     }
 
     protected void textoPagar(){
+        System.out.println("----");
         System.out.println("1. Pago con tarjeta");
         System.out.println("2. Pago en efectivo");
     }
@@ -129,26 +130,17 @@ public class Utilidades{
         return sc.nextLine();
     }
  
-    protected int cantidadRestante (Scanner sc, int cantidadProducto, int numeroUsuario){
+    protected int cantidadRestante (int cantidadProducto, int numeroUsuario){
         if (numeroUsuario <= cantidadProducto) {
            return cantidadProducto += -(numeroUsuario);
         } else {
             System.out.println("No queda stock, lo sentimos");
-            return cantidadProducto += -(numeroUsuario);
+            return cantidadProducto;
         }
         
     
     }
 
-    protected int cantidadRestante (Scanner sc, int cantidadProducto){
-        int numeroUsuario = 1; 
-        if (numeroUsuario <= cantidadProducto) {
-           return cantidadProducto += -(numeroUsuario);
-        } else {
-            System.out.println("No queda stock, lo sentimos");
-            return 0;
-        }
-    }
     }
 
     

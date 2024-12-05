@@ -47,15 +47,11 @@ public class Pan {
         if (cantidadRestante < 0){
             cantidadRestante = 0;
             return 0;
-        }else if (cantidadUsuario >= cantidadRestante) {
+        }else if (cantidadUsuario <= cantidadRestante) {
             return this.precioTotal += (precioProducto*cantidadUsuario);
         }else {
             return 0;
         }
-
-        /*
-         * 
-         */
         
     }
 }

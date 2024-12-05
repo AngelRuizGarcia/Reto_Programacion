@@ -39,4 +39,16 @@ public class Pasteles {
         System.out.println("kcalorias: " + Kcal);
 
     }
+
+    protected double calculoPrecioTotal(int cantidadUsuario){
+        if (cantidadRestante < 0){
+            cantidadRestante = 0;
+            return 0;
+        }else if (cantidadUsuario <= cantidadRestante) {
+            return this.precioTotal += (precioProducto*cantidadUsuario);
+        }else {
+            return 0;
+        }
+        
+    }
 }
