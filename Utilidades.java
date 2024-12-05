@@ -18,12 +18,15 @@ public class Utilidades{
         
     }
 
+    //Texto que se muestra al seleccionar terminar compra y pagar
     protected void textoPagar(){
         System.out.println("----");
         System.out.println("1. Pago con tarjeta");
         System.out.println("2. Pago en efectivo");
+        System.out.print("Introduce una opción: ");
     }
 
+    //texto que se muestra al seleccionar pan
     protected void textoProductoPan(){
         System.out.println();
         System.out.println("Menu de Panes");
@@ -35,6 +38,8 @@ public class Utilidades{
         System.out.println("6. Volver al menu principal");
         System.out.print("Introduce una opción: ");
     }
+
+    //texto que se muestra al seleccionar bebidas
     protected void textoProductoBebidas(){
         System.out.println();
         System.out.println("Menu de Bebidas");
@@ -46,6 +51,8 @@ public class Utilidades{
         System.out.println("6. Volver al menu principal");
         System.out.print("Introduce una opción: ");
     }
+
+    //texto que se muestra al seleccionar pasteles
     protected void textoProductoPasteles(){
         System.out.println();
         System.out.println("Menu de Pasteles");
@@ -57,6 +64,8 @@ public class Utilidades{
         System.out.println("6. Volver al menu principal");
         System.out.print("Introduce una opción: ");
     }
+
+    //texto que se muestra al seleccionar pizzas
     protected void textoProductoPizza(){
         System.out.println();
         System.out.println("Menu de Pizzas");
@@ -69,11 +78,13 @@ public class Utilidades{
         System.out.print("Introduce una opción: ");
     }
 
+    //texto que pregunta cuanta cantidad quieres
     protected void textoCantidad(){
         System.out.println("Cuanta cantidad quieres?");
         System.out.print("Introduce la cantidad: ");
     }
 
+    //texto que se muestra al seleccionar mas informacion de un producto
     protected void textoProductoBebidasMasInformacion(){
         System.out.println("----");
         System.out.println("Sobre que quieres mas informacion?");
@@ -118,6 +129,8 @@ public class Utilidades{
         System.out.print("Introduce una opción: ");
     }
 
+
+    //llamada a escaners
     protected int pedirNumeroEntero(Scanner sc){
         return sc.nextInt();
     }
@@ -129,18 +142,87 @@ public class Utilidades{
     protected String pedirTexto(Scanner sc){
         return sc.nextLine();
     }
- 
+
+    //metodo que devuelve la cantidad restante del producto que se le pasa por parametro
     protected int cantidadRestante (int cantidadProducto, int numeroUsuario){
         if (numeroUsuario <= cantidadProducto) {
            return cantidadProducto += -(numeroUsuario);
         } else {
-            System.out.println("No queda stock, lo sentimos");
+            System.out.println("No hay suficiente stock para la cantidad introducida");
             return cantidadProducto;
         }
-        
-    
     }
 
+    protected void textoResumenPago(Pan[] pan,Bebidas[] bebidas,Pizzas[] pizza,Pasteles[] pastel){
+        System.out.println("Desglose de productos: ");
+
+        for (int i = 0; i < pan.length; i++) {
+            if (pan[i].precioTotal > 0) {
+                System.out.println();
+                System.out.println("Panes:");        
+                System.out.println("Nombre: " + pan[i].nombreProducto);
+                System.out.println("Precio Unidad: " + pan[i].precioProducto);
+                System.out.println("Cantidad Seleccionada: "  + (pan[i].cantidadProducto-(pan[i].cantidadRestante)));
+                System.out.println("Precio Total Panes: " + pan[i].precioTotal);
+            }
+        }
+
+        for (int i = 0; i < bebidas.length; i++) {
+            if (bebidas[i].precioTotal > 0) {
+                System.out.println();
+                System.out.println("Bebidas:");        
+                System.out.println("Nombre: " + bebidas[i].nombreProducto);
+                System.out.println("Precio Unidad: " + bebidas[i].precioProducto);
+                System.out.println("Cantidad Seleccionada: "  + (bebidas[i].cantidadProducto-(bebidas[i].cantidadRestante)));
+                System.out.println("Precio Total Bebidas: " + bebidas[i].precioTotal);
+            }
+        }
+
+        for (int i = 0; i < pizza.length; i++) {
+            if (pizza[i].precioTotal > 0) {
+                System.out.println();
+                System.out.println("Pizzas:");        
+                System.out.println("Nombre: " + pizza[i].nombreProducto);
+                System.out.println("Precio Unidad: " + pizza[i].precioProducto);
+                System.out.println("Cantidad Seleccionada: "  + (pizza[i].cantidadProducto-(pizza[i].cantidadRestante)));
+                System.out.println("Precio Total Pizza: " + pizza[i].precioTotal);
+            }
+        }
+
+        for (int i = 0; i < pastel.length; i++) {
+            if (pastel[i].precioTotal > 0) {
+                System.out.println();
+                System.out.println("Pasteles:");        
+                System.out.println("Nombre: " + pastel[i].nombreProducto);
+                System.out.println("Precio Unidad: " + pastel[i].precioProducto);
+                System.out.println("Cantidad Seleccionada: "  + (pastel[i].cantidadProducto-(pastel[i].cantidadRestante)));
+                System.out.println("Precio Total Pastel: " + pastel[i].precioTotal);
+            }
+        }
     }
 
-    
+    protected double pagarConEfectivo(Pan[] pan,Bebidas[] bebidas,Pizzas[] pizza,Pasteles[] pastel){
+        double suma = 0;
+        for (int i = 0; i < 4; i++) {
+            suma += pan[i].precioTotal + bebidas[i].precioTotal + pizza[i].precioTotal + pastel[i].precioTotal;
+        }
+        return suma;
+    }
+
+    protected boolean calculoVueltaEfectivo(double efectivoUsuario, double totalProductos){
+        System.out.println();
+        if (efectivoUsuario > totalProductos) {
+            System.out.println("Pago aceptado");
+            System.out.println("Cambio: " + (efectivoUsuario-totalProductos));
+            return true;
+        } else{
+            System.out.println("El efectivo que has dado no es suficiente para pagar");
+            return false;
+        }
+    }
+
+    protected void textoPagoConEfectivo(){
+        System.out.println();
+        System.out.print("Introduce la cantidad de dinero: ");
+    }
+}
