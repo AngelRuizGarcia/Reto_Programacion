@@ -252,7 +252,9 @@ public class AplicacionPrincipal {
     protected static void menuPagar(Utilidades util0, Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pastel){
         util0.textoPagar();
         switch (util0.pedirNumeroEntero(sc)) {
-            case 1: break;
+            case 1: 
+                util0.textoResumenPago(pan, bebidas, pizza, pastel);
+            break;
             case 2: 
                 util0.textoResumenPago(pan, bebidas, pizza, pastel);
 

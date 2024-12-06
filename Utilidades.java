@@ -154,23 +154,23 @@ public class Utilidades{
     }
 
     protected void textoResumenPago(Pan[] pan,Bebidas[] bebidas,Pizzas[] pizza,Pasteles[] pastel){
-        System.out.println("Desglose de productos: ");
-
+        System.out.println("Resumen de la compra: ");
+        System.out.println("----");
+        System.out.println("Panes:"); 
         for (int i = 0; i < pan.length; i++) {
             if (pan[i].precioTotal > 0) {
-                System.out.println();
-                System.out.println("Panes:");        
+                System.out.println();       
                 System.out.println("Nombre: " + pan[i].nombreProducto);
                 System.out.println("Precio Unidad: " + pan[i].precioProducto);
                 System.out.println("Cantidad Seleccionada: "  + (pan[i].cantidadProducto-(pan[i].cantidadRestante)));
-                System.out.println("Precio Total Panes: " + pan[i].precioTotal);
+                System.out.println("Precio Total de " + pan[i].nombreProducto + ": "+ pan[i].precioTotal);
             }
         }
-
+        System.out.println("----");
+        System.out.println("Bebidas:");        
         for (int i = 0; i < bebidas.length; i++) {
             if (bebidas[i].precioTotal > 0) {
                 System.out.println();
-                System.out.println("Bebidas:");        
                 System.out.println("Nombre: " + bebidas[i].nombreProducto);
                 System.out.println("Precio Unidad: " + bebidas[i].precioProducto);
                 System.out.println("Cantidad Seleccionada: "  + (bebidas[i].cantidadProducto-(bebidas[i].cantidadRestante)));
@@ -206,7 +206,7 @@ public class Utilidades{
         for (int i = 0; i < 4; i++) {
             suma += pan[i].precioTotal + bebidas[i].precioTotal + pizza[i].precioTotal + pastel[i].precioTotal;
         }
-        System.out.println("Total ha pagar: " + suma);
+        System.out.println("Total a pagar: " + suma);
         return suma;
     }
 
@@ -225,5 +225,23 @@ public class Utilidades{
     protected void textoPagoConEfectivo(){
         System.out.println();
         System.out.print("Introduce la cantidad de dinero: ");
+    }
+
+    protected void textoPagoTarjeta()throws InterruptedException{
+        System.out.println("Acerque la tarjeta al lector");
+        Thread.sleep(4000);
+
+        char numeros [] = {'|','/', '-','\\'};
+        System.out.println("Cargando:");
+        for(int i = 0; i < 4; i++){
+            System.out.print("\r" + numeros[i]);
+            Thread.sleep(2000);
+        }
+
+    for(int i = 0; i < 4; i++){
+        System.out.print("\r" + numeros[i]);
+        Thread.sleep(2000);
+    }
+
     }
 }
