@@ -156,7 +156,7 @@ public class Utilidades{
     protected void textoResumenPago(Pan[] pan,Bebidas[] bebidas,Pizzas[] pizza,Pasteles[] pastel){
         System.out.println("Resumen de la compra: ");
         System.out.println("----");
-        System.out.println("Panes:"); 
+        System.out.println("1. Panes:"); 
         for (int i = 0; i < pan.length; i++) {
             if (pan[i].precioTotal > 0) {
                 System.out.println();       
@@ -166,8 +166,33 @@ public class Utilidades{
                 System.out.println("Precio Total de " + pan[i].nombreProducto + ": "+ pan[i].precioTotal);
             }
         }
+
         System.out.println("----");
-        System.out.println("Bebidas:");        
+        System.out.println("2. Pizzas:"); 
+        for (int i = 0; i < pizza.length; i++) {
+            if (pizza[i].precioTotal > 0) {
+                System.out.println();       
+                System.out.println("Nombre: " + pizza[i].nombreProducto);
+                System.out.println("Precio Unidad: " + pizza[i].precioProducto);
+                System.out.println("Cantidad Seleccionada: "  + (pizza[i].cantidadProducto-(pizza[i].cantidadRestante)));
+                System.out.println("Precio Total Pizza: " + pizza[i].precioTotal);
+            }
+        }
+
+        System.out.println("----");
+        System.out.println("3. Pasteles:"); 
+        for (int i = 0; i < pastel.length; i++) {
+            if (pastel[i].precioTotal > 0) {
+                System.out.println();        
+                System.out.println("Nombre: " + pastel[i].nombreProducto);
+                System.out.println("Precio Unidad: " + pastel[i].precioProducto);
+                System.out.println("Cantidad Seleccionada: "  + (pastel[i].cantidadProducto-(pastel[i].cantidadRestante)));
+                System.out.println("Precio Total Pastel: " + pastel[i].precioTotal);
+            }
+        }
+
+        System.out.println("----");
+        System.out.println("4. Bebidas:");        
         for (int i = 0; i < bebidas.length; i++) {
             if (bebidas[i].precioTotal > 0) {
                 System.out.println();
@@ -177,28 +202,7 @@ public class Utilidades{
                 System.out.println("Precio Total Bebidas: " + bebidas[i].precioTotal);
             }
         }
-
-        for (int i = 0; i < pizza.length; i++) {
-            if (pizza[i].precioTotal > 0) {
-                System.out.println();
-                System.out.println("Pizzas:");        
-                System.out.println("Nombre: " + pizza[i].nombreProducto);
-                System.out.println("Precio Unidad: " + pizza[i].precioProducto);
-                System.out.println("Cantidad Seleccionada: "  + (pizza[i].cantidadProducto-(pizza[i].cantidadRestante)));
-                System.out.println("Precio Total Pizza: " + pizza[i].precioTotal);
-            }
-        }
-
-        for (int i = 0; i < pastel.length; i++) {
-            if (pastel[i].precioTotal > 0) {
-                System.out.println();
-                System.out.println("Pasteles:");        
-                System.out.println("Nombre: " + pastel[i].nombreProducto);
-                System.out.println("Precio Unidad: " + pastel[i].precioProducto);
-                System.out.println("Cantidad Seleccionada: "  + (pastel[i].cantidadProducto-(pastel[i].cantidadRestante)));
-                System.out.println("Precio Total Pastel: " + pastel[i].precioTotal);
-            }
-        }
+        
     }
 
     protected double pagarConEfectivo(Pan[] pan,Bebidas[] bebidas,Pizzas[] pizza,Pasteles[] pastel){
