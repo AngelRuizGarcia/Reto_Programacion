@@ -38,7 +38,7 @@ public class Pan {
         System.out.println("----");
         System.out.println("Nombre: " + nombreProducto);
         System.out.println("Lleva gluten? " + llevaGluten);
-        System.out.println("peso: " + peso);
+        System.out.println("peso: " + peso + " gramos");
         System.out.println("Kcalorias: " + Kcal);
 
     }
