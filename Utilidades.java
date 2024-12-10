@@ -8,13 +8,14 @@ public class Utilidades{
     }
     //texto principal/inicial del programa
     protected void textoPrincipal(){
-        System.out.println();
+        System.out.println("----");
         System.out.println("Menu de Opciones");
         System.out.println("1. Panes");
         System.out.println("2. Pizzas");
         System.out.println("3. Pasteles");
         System.out.println("4. Bebidas");
         System.out.println("5. Finalizar compra y pagar");
+        System.out.println("6. Salir de la tienda");
         System.out.print("Introduce una opción: ");
         
     }
@@ -29,7 +30,7 @@ public class Utilidades{
 
     //texto que se muestra al seleccionar pan
     protected void textoProductoPan(){
-        System.out.println();
+        System.out.println("----");
         System.out.println("Menu de Panes");
         System.out.println("1. Pan integral - 1.25 E");
         System.out.println("2. Barra de pan - 0.5 E");
@@ -42,7 +43,7 @@ public class Utilidades{
 
     //texto que se muestra al seleccionar bebidas
     protected void textoProductoBebidas(){
-        System.out.println();
+        System.out.println("----");
         System.out.println("Menu de Bebidas");
         System.out.println("1. Nestea - 1.99 E");
         System.out.println("2. Agua - 0.99 E");
@@ -55,7 +56,7 @@ public class Utilidades{
 
     //texto que se muestra al seleccionar pasteles
     protected void textoProductoPasteles(){
-        System.out.println();
+        System.out.println("----");
         System.out.println("Menu de Pasteles");
         System.out.println("1. Pastel de carne - 3.5 E");
         System.out.println("2. Pastel de fresa - 2.99 E");
@@ -68,7 +69,7 @@ public class Utilidades{
 
     //texto que se muestra al seleccionar pizzas
     protected void textoProductoPizza(){
-        System.out.println();
+        System.out.println("----");
         System.out.println("Menu de Pizzas");
         System.out.println("1. Pizza 4 Estaciones - 3.19 E");
         System.out.println("2. Pizza Jamon y Queso - 2.69 E");
@@ -81,6 +82,7 @@ public class Utilidades{
 
     //texto que pregunta cuanta cantidad quieres
     protected void textoCantidad(){
+        System.out.println("----");
         System.out.println("Cuanta cantidad quieres?");
         System.out.print("Introduce la cantidad: ");
     }
@@ -155,6 +157,7 @@ public class Utilidades{
     }
 
     protected void textoResumenPago(Pan[] pan,Bebidas[] bebidas,Pizzas[] pizza,Pasteles[] pastel){
+        System.out.println("----");
         System.out.println("Resumen de la compra: ");
         System.out.println("----");
         System.out.println("1. Panes:"); 
@@ -212,7 +215,8 @@ public class Utilidades{
 
     }
 
-    protected double pagarConEfectivo(Pan[] pan,Bebidas[] bebidas,Pizzas[] pizza,Pasteles[] pastel){
+    protected double totalAPagar(Pan[] pan,Bebidas[] bebidas,Pizzas[] pizza,Pasteles[] pastel){
+        System.out.println("----");
         double suma = 0;
         for (int i = 0; i < 4; i++) {
             suma += pan[i].precioTotal + bebidas[i].precioTotal + pizza[i].precioTotal + pastel[i].precioTotal;
@@ -222,7 +226,7 @@ public class Utilidades{
     }
 
     protected boolean calculoVueltaEfectivo(double efectivoUsuario, double totalProductos){
-        System.out.println();
+        System.out.println("----");
         if (efectivoUsuario > totalProductos) {
             System.out.println("Pago aceptado");
             System.out.println("Cambio: " + (efectivoUsuario-totalProductos));
@@ -234,28 +238,33 @@ public class Utilidades{
     }
 
     protected void textoPagoConEfectivo(){
-        System.out.println();
+        System.out.println("----");
         System.out.print("Introduce tu importe para la compra: ");
     }
 
     protected void textoPagoTarjeta()throws InterruptedException{
-        System.out.println("Acerque la tarjeta al lector:");
+        System.out.println("----");
+        System.out.println("Acerque la tarjeta al lector");
         Thread.sleep(4000);
 
         char numeros [] = {'|','/', '-','\\','|','/', '-','\\'};
         System.out.println("Leyendo la tarjeta, espere porfavor");
         for(int i = 0; i < 8; i++){
             System.out.print("\r" + numeros[i]);
-            Thread.sleep(1200);
+            Thread.sleep(1100);
         }
         
     }
 
-    protected void tarjetaAceptadaORechazada(){
-        System.out.println("");
+    protected boolean tarjetaAceptadaORechazada(){
+        System.out.println();
+        System.out.println("----");
         if (Math.random() < 0.03) {
             System.out.println("Lo sentimos, la tarjeta ha sido rechazada");
-        } else { System.out.println("La tarjeta ha sido aceptada, disfrute de su compra y tenga un buen dia!");
+            return false;
+        } else {
+            System.out.println("La tarjeta ha sido aceptada, disfrute de su compra y tenga un buen dia!");
+            return true;
         }
     }
 }

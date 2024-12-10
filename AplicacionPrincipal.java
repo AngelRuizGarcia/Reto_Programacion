@@ -48,6 +48,7 @@ public class AplicacionPrincipal {
         case 3: menuPasteles(util0, sc, pizza, pan, bebidas, pasteles); break;
         case 4: menuBebidas(util0, sc, pizza, pan, bebidas, pasteles); break;
         case 5: menuPagar(util0, sc, pizza, pan, bebidas, pasteles); break;
+        case 6: break;
         
         default: System.out.println("Numero introducido no valido."); break;
     }
@@ -254,16 +255,20 @@ public class AplicacionPrincipal {
         switch (util0.pedirNumeroEntero(sc)) {
             case 1: 
                 util0.textoResumenPago(pan, bebidas, pizza, pastel);
+                util0.totalAPagar(pan, bebidas, pizza, pastel);
                 util0.horaDeLaCompra();
                 util0.textoPagoTarjeta();
-                util0.tarjetaAceptadaORechazada();
+                if(!util0.tarjetaAceptadaORechazada()){
+                    menuPagar(util0, sc, pizza, pan, bebidas, pastel);
+                }
+
             break;
             case 2: 
                 util0.textoResumenPago(pan, bebidas, pizza, pastel);
 
                 util0.horaDeLaCompra();
 
-                double total = util0.pagarConEfectivo(pan, bebidas, pizza, pastel);
+                double total = util0.totalAPagar(pan, bebidas, pizza, pastel);
                 
                 util0.textoPagoConEfectivo();
                 double efectivoUsuario = util0.pedirNumeroDouble(sc);
