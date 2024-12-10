@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class AplicacionPrincipal {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Scanner sc = new Scanner(System.in);
         Utilidades util0 = new Utilidades();
 
@@ -40,7 +40,7 @@ public class AplicacionPrincipal {
 
     }
 
-    protected static void menuPrincipal(Utilidades util0, Scanner sc, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles, Pizzas[] pizza){
+    protected static void menuPrincipal(Utilidades util0, Scanner sc, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles, Pizzas[] pizza) throws InterruptedException{
     util0.textoPrincipal();
     switch (util0.pedirNumeroEntero(sc)) {
         case 1: menuPanes(util0, sc, pan, bebidas, pasteles, pizza); break;
@@ -52,7 +52,7 @@ public class AplicacionPrincipal {
         default: System.out.println("Numero introducido no valido."); break;
     }
     }
-    protected static void menuPanes(Utilidades util0, Scanner sc, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles, Pizzas[] pizza ){
+    protected static void menuPanes(Utilidades util0, Scanner sc, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles, Pizzas[] pizza ) throws InterruptedException{
         int numUsuario;
         int numRestanteCalculado;
         util0.textoProductoPan();
@@ -103,7 +103,7 @@ public class AplicacionPrincipal {
 
     }
 
-    protected static void menuPizzas(Utilidades util0, Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles){
+    protected static void menuPizzas(Utilidades util0, Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles) throws InterruptedException{
         int numUsuario;
         int numRestanteCalculado;
         util0.textoProductoPizza();
@@ -152,7 +152,7 @@ public class AplicacionPrincipal {
         }
     }
 
-    protected static void menuPasteles(Utilidades util0, Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles){
+    protected static void menuPasteles(Utilidades util0, Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles) throws InterruptedException{
         int numUsuario;
         int numRestanteCalculado;
         util0.textoProductoPasteles();
@@ -200,7 +200,7 @@ public class AplicacionPrincipal {
         }
     }
 
-    protected static void menuBebidas(Utilidades util0, Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles){
+    protected static void menuBebidas(Utilidades util0, Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles) throws InterruptedException{
         int numUsuario;
         int numRestanteCalculado;
         util0.textoProductoBebidas();
@@ -249,14 +249,19 @@ public class AplicacionPrincipal {
         }
     }
 
-    protected static void menuPagar(Utilidades util0, Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pastel){
+    protected static void menuPagar(Utilidades util0, Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pastel) throws InterruptedException{
         util0.textoPagar();
         switch (util0.pedirNumeroEntero(sc)) {
             case 1: 
                 util0.textoResumenPago(pan, bebidas, pizza, pastel);
+                util0.horaDeLaCompra();
+                util0.textoPagoTarjeta();
+                util0.tarjetaAceptadaORechazada();
             break;
             case 2: 
                 util0.textoResumenPago(pan, bebidas, pizza, pastel);
+
+                util0.horaDeLaCompra();
 
                 double total = util0.pagarConEfectivo(pan, bebidas, pizza, pastel);
                 
@@ -272,7 +277,7 @@ public class AplicacionPrincipal {
         }
     }
 
-    protected static void menuBebidasMasInformacion(Utilidades util0,Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles ){
+    protected static void menuBebidasMasInformacion(Utilidades util0,Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles ) throws InterruptedException{
         switch (util0.pedirNumeroEntero(sc)){
             case 1:
                 bebidas[0].textoBebidasMostrarInformacion();
@@ -296,7 +301,7 @@ public class AplicacionPrincipal {
         }
     }
 
-    protected static void menuPizzasMasInformacion(Utilidades util0,Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles ){
+    protected static void menuPizzasMasInformacion(Utilidades util0,Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles )throws InterruptedException{
         switch (util0.pedirNumeroEntero(sc)){
             case 1:
                 pizza[0].textoPizzasMostrarInformacion();
@@ -320,7 +325,7 @@ public class AplicacionPrincipal {
         }
     }
 
-    protected static void menuPastelesMasInformacion(Utilidades util0,Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles ){
+    protected static void menuPastelesMasInformacion(Utilidades util0,Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles )throws InterruptedException{
         switch (util0.pedirNumeroEntero(sc)){
             case 1:
                 pasteles[0].textoPastelesMostrarInformacion();
@@ -344,7 +349,7 @@ public class AplicacionPrincipal {
         }
     }
 
-    protected static void menuPanMasInformacion(Utilidades util0,Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles ){
+    protected static void menuPanMasInformacion(Utilidades util0,Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles )throws InterruptedException{
         switch (util0.pedirNumeroEntero(sc)){
             case 1:
                 pan[0].textoPanMostrarInformacion();

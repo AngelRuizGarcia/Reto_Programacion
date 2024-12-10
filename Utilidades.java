@@ -1,3 +1,4 @@
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Utilidades{
@@ -205,6 +206,12 @@ public class Utilidades{
         
     }
 
+    protected void horaDeLaCompra(){
+        System.out.println("----");
+        System.out.println("Hora del pedido: " + LocalDateTime.now());
+
+    }
+
     protected double pagarConEfectivo(Pan[] pan,Bebidas[] bebidas,Pizzas[] pizza,Pasteles[] pastel){
         double suma = 0;
         for (int i = 0; i < 4; i++) {
@@ -228,24 +235,27 @@ public class Utilidades{
 
     protected void textoPagoConEfectivo(){
         System.out.println();
-        System.out.print("Introduce la cantidad de dinero: ");
+        System.out.print("Introduce tu importe para la compra: ");
     }
 
     protected void textoPagoTarjeta()throws InterruptedException{
-        System.out.println("Acerque la tarjeta al lector");
+        System.out.println("Acerque la tarjeta al lector:");
         Thread.sleep(4000);
 
-        char numeros [] = {'|','/', '-','\\'};
-        System.out.println("Cargando:");
-        for(int i = 0; i < 4; i++){
+        char numeros [] = {'|','/', '-','\\','|','/', '-','\\'};
+        System.out.println("Leyendo la tarjeta, espere porfavor");
+        for(int i = 0; i < 8; i++){
             System.out.print("\r" + numeros[i]);
-            Thread.sleep(2000);
+            Thread.sleep(1200);
         }
-
-    for(int i = 0; i < 4; i++){
-        System.out.print("\r" + numeros[i]);
-        Thread.sleep(2000);
+        
     }
 
+    protected void tarjetaAceptadaORechazada(){
+        System.out.println("");
+        if (Math.random() < 0.03) {
+            System.out.println("Lo sentimos, la tarjeta ha sido rechazada");
+        } else { System.out.println("La tarjeta ha sido aceptada, disfrute de su compra y tenga un buen dia!");
+        }
     }
 }
