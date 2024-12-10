@@ -20,14 +20,6 @@ public class Utilidades{
         
     }
 
-    //Texto que se muestra al seleccionar terminar compra y pagar
-    protected void textoPagar(){
-        System.out.println("----");
-        System.out.println("1. Pago con tarjeta");
-        System.out.println("2. Pago en efectivo");
-        System.out.print("Introduce una opción: ");
-    }
-
     //texto que se muestra al seleccionar pan
     protected void textoProductoPan(){
         System.out.println("----");
@@ -67,7 +59,7 @@ public class Utilidades{
         System.out.print("Introduce una opción: ");
     }
 
-    //texto que se muestra al seleccionar pizzas
+    //Texto que se muestra al seleccionar pizzas
     protected void textoProductoPizza(){
         System.out.println("----");
         System.out.println("Menu de Pizzas");
@@ -80,14 +72,15 @@ public class Utilidades{
         System.out.print("Introduce una opción: ");
     }
 
-    //texto que pregunta cuanta cantidad quieres
+    //Texto que se muestra al pedir la cantidad de los productos
     protected void textoCantidad(){
         System.out.println("----");
         System.out.println("Cuanta cantidad quieres?");
         System.out.print("Introduce la cantidad: ");
     }
 
-    //texto que se muestra al seleccionar mas informacion de un producto
+
+    //Texto que se muestra cuando seleccionas mas informacion
     protected void textoProductoBebidasMasInformacion(){
         System.out.println("----");
         System.out.println("Sobre que quieres mas informacion?");
@@ -133,7 +126,9 @@ public class Utilidades{
     }
 
 
-    //llamada a escaners
+    /*
+     * Llamada a escaners para pedir numeros enteros, double o Strings
+     */
     protected int pedirNumeroEntero(Scanner sc){
         return sc.nextInt();
     }
@@ -146,18 +141,40 @@ public class Utilidades{
         return sc.nextLine();
     }
 
-    //metodo que devuelve la cantidad restante del producto que se le pasa por parametro
+    /*
+     * Metodo que devuelve la cantidad restante
+     * del producto que se le pasa por parametro.
+     * 
+     * Convierte el numero de usuario a negativo
+     * y lo suma a la cantidad del producto
+     */
     protected int cantidadRestante (int cantidadProducto, int numeroUsuario){
         if (numeroUsuario <= cantidadProducto) {
-           return cantidadProducto += -(numeroUsuario);
+           return cantidadProducto + -(numeroUsuario);
         } else {
             System.out.println("No hay suficiente stock para la cantidad introducida");
             return cantidadProducto;
         }
     }
 
-    protected void textoResumenPago(Pan[] pan,Bebidas[] bebidas,Pizzas[] pizza,Pasteles[] pastel){
+    
+    //Texto que se muestra al seleccionar terminar compra y pagar
+    protected void textoPagar(){
         System.out.println("----");
+        System.out.println("1. Pago con tarjeta");
+        System.out.println("2. Pago en efectivo");
+        System.out.print("Introduce una opción: ");
+    }
+
+    /*
+     * Metodo que resume la compra recorriendo los objetos
+     * e imprime para cada uno de los productos de cada clase.
+     * 
+     * Los for recorren los arrays y el if comprueba que tiene un valor
+     * para poder imprimir ese desglose.
+     */
+    protected void textoResumenPago(Pan[] pan,Bebidas[] bebidas,Pizzas[] pizza,Pasteles[] pastel){
+        System.out.println();
         System.out.println("Resumen de la compra: ");
         System.out.println("----");
         System.out.println("1. Panes:"); 
@@ -209,12 +226,20 @@ public class Utilidades{
         
     }
 
+    /*
+     * Metodo que imprime la hora que ha sido pagado la compra
+     */
     protected void horaDeLaCompra(){
         System.out.println("----");
         System.out.println("Hora del pedido: " + LocalDateTime.now());
 
     }
-
+    
+    /*
+     * Metodo que suma todos los preciosTotales de todos los arrays y los muestra
+     * 
+     * Y devuelve la suma para poder calcular el cambio
+     */
     protected double totalAPagar(Pan[] pan,Bebidas[] bebidas,Pizzas[] pizza,Pasteles[] pastel){
         System.out.println("----");
         double suma = 0;
@@ -224,7 +249,10 @@ public class Utilidades{
         System.out.println("Total a pagar: " + suma);
         return suma;
     }
-
+    
+    /*
+     * Metodo que calcula el cambio del pago en efectivo
+     */
     protected boolean calculoVueltaEfectivo(double efectivoUsuario, double totalProductos){
         System.out.println("----");
         if (efectivoUsuario > totalProductos) {
@@ -242,6 +270,9 @@ public class Utilidades{
         System.out.print("Introduce tu importe para la compra: ");
     }
 
+    /*
+     * Metodo que muestra una animacion cuando esta leyendo la tarjeta
+     */
     protected void textoPagoTarjeta()throws InterruptedException{
         System.out.println("----");
         System.out.println("Acerque la tarjeta al lector");
@@ -249,13 +280,17 @@ public class Utilidades{
 
         char numeros [] = {'|','/', '-','\\','|','/', '-','\\'};
         System.out.println("Leyendo la tarjeta, espere porfavor");
-        for(int i = 0; i < 8; i++){
+        for(int i = 0; i < numeros.length; i++){
             System.out.print("\r" + numeros[i]);
             Thread.sleep(1100);
         }
         
     }
 
+    /*
+     * El metodo muestra un mensaje si la tarjeta a sido aceptada
+     * Pero puede que no sea aceptada por un 3% de que falle el lector
+     */
     protected boolean tarjetaAceptadaORechazada(){
         System.out.println();
         System.out.println("----");

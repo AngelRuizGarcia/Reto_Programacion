@@ -37,6 +37,7 @@ public class AplicacionPrincipal {
 
         util0.textoPrincipio();
         menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
+        sc.close();
 
     }
 
