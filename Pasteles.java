@@ -12,9 +12,6 @@ public class Pasteles {
     protected double peso;
     protected int Kcal;
 
-    public Pasteles() {
-    }
-
 
     public Pasteles(String nombreProducto, int cantidadProducto, double precioProducto, boolean llevaGluten, double peso, int Kcal) {
         this.nombreProducto = nombreProducto;

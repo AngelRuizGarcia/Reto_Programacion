@@ -13,10 +13,6 @@ public class Pizzas {
     protected int Kcal;
 
 
-    public Pizzas() {
-    }
-
-
     public Pizzas(String nombreProducto, int cantidadProducto, double precioProducto, boolean llevaJamon, double peso, int Kcal) {
         this.nombreProducto = nombreProducto;
         this.cantidadProducto = cantidadProducto;

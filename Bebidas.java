@@ -12,11 +12,6 @@ public class Bebidas {
     protected int Kcal;
     
 
-
-    public Bebidas() {
-    }
-
-
     public Bebidas(String nombreProducto, int cantidadProducto, double precioProducto, int cantidadML, int Kcal) {
         this.nombreProducto = nombreProducto;
         this.cantidadProducto = cantidadProducto;

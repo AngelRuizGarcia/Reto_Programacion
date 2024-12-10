@@ -14,10 +14,6 @@ public class Pan {
 
 
 
-    public Pan() {
-    }
-
-
     public Pan(String nombreProducto, int cantidadProducto, double precioProducto, boolean llevaGluten, double peso, int Kcal) {
         this.nombreProducto = nombreProducto;
         this.cantidadProducto = cantidadProducto;
