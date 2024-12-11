@@ -2,11 +2,12 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Utilidades{
-    //texto de inicio del programa
+    //Texto que se usa para mostrar un mensaje al principio del programa
     protected void textoPrincipio (){
         System.out.println("Bienvenido al programa del tono la ines ");
     }
-    //texto principal/inicial del programa
+
+    //Texto que se muestra cuando entras al primer menu
     protected void textoPrincipal(){
         System.out.println("----");
         System.out.println("Menu de Opciones");
@@ -20,7 +21,7 @@ public class Utilidades{
         
     }
 
-    //texto que se muestra al seleccionar pan
+    //Texto que se muestra al seleccionar pan
     protected void textoProductoPan(){
         System.out.println("----");
         System.out.println("Menu de Panes");
@@ -33,7 +34,7 @@ public class Utilidades{
         System.out.print("Introduce una opción: ");
     }
 
-    //texto que se muestra al seleccionar bebidas
+    //Texto que se muestra al seleccionar bebidas
     protected void textoProductoBebidas(){
         System.out.println("----");
         System.out.println("Menu de Bebidas");
@@ -46,7 +47,7 @@ public class Utilidades{
         System.out.print("Introduce una opción: ");
     }
 
-    //texto que se muestra al seleccionar pasteles
+    //Texto que se muestra al seleccionar pasteles
     protected void textoProductoPasteles(){
         System.out.println("----");
         System.out.println("Menu de Pasteles");
@@ -92,6 +93,7 @@ public class Utilidades{
         System.out.print("Introduce una opción: ");
     }
 
+    //Texto que se muestra cuando seleccionas mas informacion
     protected void textoProductoPizzasMasInformacion(){
         System.out.println("----");
         System.out.println("Sobre que quieres mas informacion?");
@@ -102,7 +104,8 @@ public class Utilidades{
         System.out.println("4. Pizza de Kebab");
         System.out.print("Introduce una opción: ");
     }
-
+    
+    //Texto que se muestra cuando seleccionas mas informacion
     protected void textoProductoPastelesMasInformacion(){
         System.out.println("----");
         System.out.println("Sobre que quieres mas informacion?");
@@ -113,7 +116,8 @@ public class Utilidades{
         System.out.println("4. Pastel de vainilla");
         System.out.print("Introduce una opción: ");
     }
-
+    
+    //Texto que se muestra cuando seleccionas mas informacion
     protected void textoProductoPanesMasInformacion(){
         System.out.println("----");
         System.out.println("Sobre que quieres mas informacion?");
@@ -141,7 +145,12 @@ public class Utilidades{
         return sc.nextLine();
     }
 
-    /*
+    
+    /** 
+     * @param cantidadProducto Cantidad del producto
+     * @param numeroUsuario Numero que introduce el usuario
+     * @return int El numero que devuelve se usa para actualizar la cantidadRestante de un producto
+     *
      * Metodo que devuelve la cantidad restante
      * del producto que se le pasa por parametro.
      * 
@@ -166,7 +175,13 @@ public class Utilidades{
         System.out.print("Introduce una opción: ");
     }
 
-    /*
+    
+    /** 
+     * @param pan Array de objetos de la clase pan
+     * @param bebidas Array de objetos de la clase bebida
+     * @param pizza Array de objetos de la clase pizza
+     * @param pastel Array de objetos de la clase pastel
+     *
      * Metodo que resume la compra recorriendo los objetos
      * e imprime para cada uno de los productos de cada clase.
      * 
@@ -235,10 +250,15 @@ public class Utilidades{
 
     }
     
-    /*
-     * Metodo que suma todos los preciosTotales de todos los arrays y los muestra
+    
+    /** 
+     * @param pan Array de objetos de la clase pan
+     * @param bebidas Array de objetos de la clase bebida
+     * @param pizza Array de objetos de la clase pizza
+     * @param pastel Array de objetos de la clase pastel
+     * @return double La suma para poder calcular el cambio
      * 
-     * Y devuelve la suma para poder calcular el cambio
+     * Metodo que suma todos los preciosTotales de todos los arrays y los muestra
      */
     protected double totalAPagar(Pan[] pan,Bebidas[] bebidas,Pizzas[] pizza,Pasteles[] pastel){
         System.out.println("----");
@@ -250,13 +270,18 @@ public class Utilidades{
         return suma;
     }
     
-    /*
+    
+    /** 
+     * @param efectivoUsuario El numero que introduce el usuario
+     * @param totalProductos Le llega el return del metodo de totalAPagar
+     * @return boolean
+     *
      * Metodo que calcula el cambio del pago en efectivo
      */
     protected boolean calculoVueltaEfectivo(double efectivoUsuario, double totalProductos){
         System.out.println("----");
         if (efectivoUsuario > totalProductos) {
-            System.out.println("Pago aceptado");
+            System.out.println("Pago aceptado, disfrute de su compra!");
             System.out.println("Cambio: " + (efectivoUsuario-totalProductos));
             return true;
         } else{
@@ -270,7 +295,10 @@ public class Utilidades{
         System.out.print("Introduce tu importe para la compra: ");
     }
 
-    /*
+    
+    /** 
+     * @throws InterruptedException Para poder hacer los sleeps del metodo
+     *
      * Metodo que muestra una animacion cuando esta leyendo la tarjeta
      */
     protected void textoPagoTarjeta()throws InterruptedException{

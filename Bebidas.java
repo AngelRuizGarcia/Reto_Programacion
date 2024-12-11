@@ -1,14 +1,16 @@
 public class Bebidas {
 
+    //ATRIBUTOS OBLIGATORIOS
     protected String nombreProducto;
     protected int cantidadProducto;
     protected int cantidadRestante;
     protected double precioProducto;
 
+    //ATRIBUTO DE CALCULO
     protected double precioTotal;
 
-    //atrb opcionales
-    protected int cantidadML; 
+    //ATRIBUTOS OPCIONALES DE INFORMACION
+    protected double cantidadML;
     protected int Kcal;
     
 
@@ -20,10 +22,15 @@ public class Bebidas {
         this.cantidadML = cantidadML;
         this.Kcal = Kcal;
     }
-    protected void actualizarCantidadRestante(int cantiRestante){
 
+    /** Metodo que actualiza la cantidad que calcula el metodo de utilidades
+     * y le llega por parametro el calculo
+     * @param cantiRestante
+     */
+    protected void actualizarCantidadRestante(int cantiRestante){
         this.cantidadRestante = cantiRestante;
     }
+    
     protected void textoBebidasMostrarInformacion(){
         System.out.println("----");
         System.out.println("Nombre: " + nombreProducto);
@@ -32,16 +39,27 @@ public class Bebidas {
 
     }
 
+/** Metodo que calcula el precio total de la cantidad que introduce el usuario
+     * @param cantidadUsuario
+     * @return double Devuelve el precioTotal que calcula
+     */
     protected double calculoPrecioTotal(int cantidadUsuario){
-        if (cantidadRestante < 0){
+        if (cantidadRestante < 0){ 
+            /**
+            * Este if sirve para igualar la cantidad a 0 si 
+            * el usuario introduce mas de la cantidad que hay del producto
+            */
             cantidadRestante = 0;
             return 0;
         }else if (cantidadUsuario <= cantidadRestante) {
+            /**
+             * El else if comprueba si lo introducido por el usuario es menor o igual
+             * y calcula el precio total
+             */
             return this.precioTotal += (precioProducto*cantidadUsuario);
         }else {
             return 0;
         }
         
     }
-
 }

@@ -41,19 +41,43 @@ public class AplicacionPrincipal {
 
     }
 
+    
+    /** 
+     * @param util0 Clase Utilidades para mostrar textos, pedir numeros y hacer calculos
+     * @param sc Scanner para introducir numeros
+     * @param pan Array de objetos de la clase pan
+     * @param bebidas Array de objetos de la clase bebidas
+     * @param pasteles Array de objetos de la clase pasteles
+     * @param pizza Array de objetos de la clase pizza
+     * @throws InterruptedException Esto sirve para poder usar sleep en el pago con tarjeta
+     * 
+     * Este metodo sirve para ir a diferentes submenus
+     */
     protected static void menuPrincipal(Utilidades util0, Scanner sc, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles, Pizzas[] pizza) throws InterruptedException{
-    util0.textoPrincipal();
-    switch (util0.pedirNumeroEntero(sc)) {
-        case 1: menuPanes(util0, sc, pan, bebidas, pasteles, pizza); break;
-        case 2: menuPizzas(util0, sc, pizza, pan, bebidas, pasteles); break;
-        case 3: menuPasteles(util0, sc, pizza, pan, bebidas, pasteles); break;
-        case 4: menuBebidas(util0, sc, pizza, pan, bebidas, pasteles); break;
-        case 5: menuPagar(util0, sc, pizza, pan, bebidas, pasteles); break;
-        case 6: break;
-        
-        default: System.out.println("Numero introducido no valido."); break;
+        util0.textoPrincipal();
+        switch (util0.pedirNumeroEntero(sc)) {
+            case 1: menuPanes(util0, sc, pan, bebidas, pasteles, pizza); break;
+            case 2: menuPizzas(util0, sc, pizza, pan, bebidas, pasteles); break;
+            case 3: menuPasteles(util0, sc, pizza, pan, bebidas, pasteles); break;
+            case 4: menuBebidas(util0, sc, pizza, pan, bebidas, pasteles); break;
+            case 5: menuPagar(util0, sc, pizza, pan, bebidas, pasteles); break;
+            case 6: break;
+            
+            default: System.out.println("Numero introducido no valido."); break;
+        }
     }
-    }
+
+    /** 
+     * @param util0 Clase Utilidades para mostrar textos, pedir numeros y hacer calculos
+     * @param sc Scanner para introducir numeros
+     * @param pan Array de objetos de la clase pan
+     * @param bebidas Array de objetos de la clase bebidas
+     * @param pasteles Array de objetos de la clase pasteles
+     * @param pizza Array de objetos de la clase pizza
+     * @throws InterruptedException Esto sirve para poder usar sleep en el pago con tarjeta
+     * 
+     * Este metodo sirve para seleccionar que pan quieres y la cantidad que deseas
+     */
     protected static void menuPanes(Utilidades util0, Scanner sc, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles, Pizzas[] pizza ) throws InterruptedException{
         int numUsuario;
         int numRestanteCalculado;
@@ -105,6 +129,17 @@ public class AplicacionPrincipal {
 
     }
 
+    /** 
+     * @param util0 Clase Utilidades para mostrar textos, pedir numeros y hacer calculos
+     * @param sc Scanner para introducir numeros
+     * @param pan Array de objetos de la clase pan
+     * @param bebidas Array de objetos de la clase bebidas
+     * @param pasteles Array de objetos de la clase pasteles
+     * @param pizza Array de objetos de la clase pizza
+     * @throws InterruptedException Esto sirve para poder usar sleep en el pago con tarjeta
+     * 
+     * Este metodo sirve para seleccionar que pizza quieres y la cantidad que deseas
+     */
     protected static void menuPizzas(Utilidades util0, Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles) throws InterruptedException{
         int numUsuario;
         int numRestanteCalculado;
@@ -154,6 +189,17 @@ public class AplicacionPrincipal {
         }
     }
 
+    /** 
+     * @param util0 Clase Utilidades para mostrar textos, pedir numeros y hacer calculos
+     * @param sc Scanner para introducir numeros
+     * @param pan Array de objetos de la clase pan
+     * @param bebidas Array de objetos de la clase bebidas
+     * @param pasteles Array de objetos de la clase pasteles
+     * @param pizza Array de objetos de la clase pizza
+     * @throws InterruptedException Esto sirve para poder usar sleep en el pago con tarjeta
+     * 
+     * Este metodo sirve para seleccionar que pasteles quieres y la cantidad que deseas
+     */
     protected static void menuPasteles(Utilidades util0, Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles) throws InterruptedException{
         int numUsuario;
         int numRestanteCalculado;
@@ -202,6 +248,17 @@ public class AplicacionPrincipal {
         }
     }
 
+    /** 
+     * @param util0 Clase Utilidades para mostrar textos, pedir numeros y hacer calculos
+     * @param sc Scanner para introducir numeros
+     * @param pan Array de objetos de la clase pan
+     * @param bebidas Array de objetos de la clase bebidas
+     * @param pasteles Array de objetos de la clase pasteles
+     * @param pizza Array de objetos de la clase pizza
+     * @throws InterruptedException Esto sirve para poder usar sleep en el pago con tarjeta
+     * 
+     * Este metodo sirve para seleccionar que bebidas quieres y la cantidad que deseas
+     */
     protected static void menuBebidas(Utilidades util0, Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles) throws InterruptedException{
         int numUsuario;
         int numRestanteCalculado;
@@ -251,6 +308,17 @@ public class AplicacionPrincipal {
         }
     }
 
+    /** 
+     * @param util0 Clase Utilidades para mostrar textos, pedir numeros y hacer calculos
+     * @param sc Scanner para introducir numeros
+     * @param pan Array de objetos de la clase pan
+     * @param bebidas Array de objetos de la clase bebidas
+     * @param pasteles Array de objetos de la clase pasteles
+     * @param pizza Array de objetos de la clase pizza
+     * @throws InterruptedException Esto sirve para poder usar sleep en el pago con tarjeta
+     * 
+     * Este metodo sirve para seleccionar con que metodo de pago quieres terminar la compra
+     */
     protected static void menuPagar(Utilidades util0, Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pastel) throws InterruptedException{
         util0.textoPagar();
         switch (util0.pedirNumeroEntero(sc)) {
@@ -259,10 +327,10 @@ public class AplicacionPrincipal {
                 util0.totalAPagar(pan, bebidas, pizza, pastel);
                 util0.horaDeLaCompra();
                 util0.textoPagoTarjeta();
+                //Este if sirve para que si la tarjeta es rechaza (FALSE) vuelve a menu de pago
                 if(!util0.tarjetaAceptadaORechazada()){
                     menuPagar(util0, sc, pizza, pan, bebidas, pastel);
                 }
-
             break;
             case 2: 
                 util0.textoResumenPago(pan, bebidas, pizza, pastel);
@@ -274,6 +342,7 @@ public class AplicacionPrincipal {
                 util0.textoPagoConEfectivo();
                 double efectivoUsuario = util0.pedirNumeroDouble(sc);
 
+                //Este if sirve para que si el dinero que introduce el usuario es menor al del producto vuelve a menu de pago
                 if(!util0.calculoVueltaEfectivo(efectivoUsuario, total)){
                     menuPagar(util0, sc, pizza, pan, bebidas, pastel);
                 }
@@ -283,6 +352,17 @@ public class AplicacionPrincipal {
         }
     }
 
+    /** 
+     * @param util0 Clase Utilidades para mostrar textos, pedir numeros y hacer calculos
+     * @param sc Scanner para introducir numeros
+     * @param pan Array de objetos de la clase pan
+     * @param bebidas Array de objetos de la clase bebidas
+     * @param pasteles Array de objetos de la clase pasteles
+     * @param pizza Array de objetos de la clase pizza
+     * @throws InterruptedException Esto sirve para poder usar sleep en el pago con tarjeta
+     * 
+     * Este metodo sirve para mostrar mas informacion del producto seleccionado
+     */
     protected static void menuBebidasMasInformacion(Utilidades util0,Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles ) throws InterruptedException{
         switch (util0.pedirNumeroEntero(sc)){
             case 1:
@@ -306,7 +386,18 @@ public class AplicacionPrincipal {
 
         }
     }
-
+    
+    /** 
+     * @param util0 Clase Utilidades para mostrar textos, pedir numeros y hacer calculos
+     * @param sc Scanner para introducir numeros
+     * @param pan Array de objetos de la clase pan
+     * @param bebidas Array de objetos de la clase bebidas
+     * @param pasteles Array de objetos de la clase pasteles
+     * @param pizza Array de objetos de la clase pizza
+     * @throws InterruptedException Esto sirve para poder usar sleep en el pago con tarjeta
+     * 
+     * Este metodo sirve para mostrar mas informacion del producto seleccionado
+     */
     protected static void menuPizzasMasInformacion(Utilidades util0,Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles )throws InterruptedException{
         switch (util0.pedirNumeroEntero(sc)){
             case 1:
@@ -330,7 +421,18 @@ public class AplicacionPrincipal {
 
         }
     }
-
+    
+    /** 
+     * @param util0 Clase Utilidades para mostrar textos, pedir numeros y hacer calculos
+     * @param sc Scanner para introducir numeros
+     * @param pan Array de objetos de la clase pan
+     * @param bebidas Array de objetos de la clase bebidas
+     * @param pasteles Array de objetos de la clase pasteles
+     * @param pizza Array de objetos de la clase pizza
+     * @throws InterruptedException Esto sirve para poder usar sleep en el pago con tarjeta
+     * 
+     * Este metodo sirve para mostrar mas informacion del producto seleccionado
+     */
     protected static void menuPastelesMasInformacion(Utilidades util0,Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles )throws InterruptedException{
         switch (util0.pedirNumeroEntero(sc)){
             case 1:
@@ -355,6 +457,17 @@ public class AplicacionPrincipal {
         }
     }
 
+    /** 
+     * @param util0 Clase Utilidades para mostrar textos, pedir numeros y hacer calculos
+     * @param sc Scanner para introducir numeros
+     * @param pan Array de objetos de la clase pan
+     * @param bebidas Array de objetos de la clase bebidas
+     * @param pasteles Array de objetos de la clase pasteles
+     * @param pizza Array de objetos de la clase pizza
+     * @throws InterruptedException Esto sirve para poder usar sleep en el pago con tarjeta
+     * 
+     * Este metodo sirve para mostrar mas informacion del producto seleccionado
+     */
     protected static void menuPanMasInformacion(Utilidades util0,Scanner sc, Pizzas[] pizza, Pan[] pan, Bebidas[] bebidas, Pasteles[] pasteles )throws InterruptedException{
         switch (util0.pedirNumeroEntero(sc)){
             case 1:
