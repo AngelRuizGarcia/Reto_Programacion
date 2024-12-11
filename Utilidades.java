@@ -73,7 +73,7 @@ public class Utilidades{
         System.out.print("Introduce una opción: ");
     }
 
-    //Texto que se muestra al pedir la cantidad de los productos
+    //Texto que se muestra al pedir un producto
     protected void textoCantidad(){
         System.out.println("----");
         System.out.println("Cuanta cantidad quieres?");
