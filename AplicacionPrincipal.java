@@ -1,6 +1,13 @@
 import java.util.Scanner;
 
 public class AplicacionPrincipal {
+
+    /**
+     * @author Angel Ruiz Garcia
+     * @author Alejandro Rovira Martinez
+     * 
+     * Programa de gestion de una panaderia con 4 tipo de productos
+     */
     public static void main(String[] args) throws InterruptedException {
         Scanner sc = new Scanner(System.in);
         Utilidades util0 = new Utilidades();
