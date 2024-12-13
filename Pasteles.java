@@ -39,12 +39,17 @@ public class Pasteles {
 
 
     protected void textoPastelesMostrarInformacion(){
-        System.out.println("----");
-        System.out.println("Nombre: " + nombreProducto);
-        System.out.println("Lleva gluten? " + llevaGluten);
-        System.out.println("peso: " + peso + " gramos");
-        System.out.println("Kcalorias: " + Kcal);
 
+        System.out.println("----");
+        System.out.println("Nombre: " + nombreProducto + ".");
+        System.out.println("Peso: " + peso + " gramos.");
+        System.out.println("Kcalorias: " + Kcal + ".");
+        if (llevaGluten == true)  {
+            System.out.println("Contiene gluten.");
+        } else {
+            System.out.println("No contiene gluten.");
+        }
+        
     }    
     /** Metodo que calcula el precio total de la cantidad que introduce el usuario
      * @param cantidadUsuario

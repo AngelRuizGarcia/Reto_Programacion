@@ -33,9 +33,9 @@ public class Bebidas {
     
     protected void textoBebidasMostrarInformacion(){
         System.out.println("----");
-        System.out.println("Nombre: " + nombreProducto);
-        System.out.println("Cantidad de ml? " + cantidadML);
-        System.out.println("kcalorias: " + Kcal);
+        System.out.println("Nombre: " + nombreProducto + ".");
+        System.out.println("Cantidad de ml: " + cantidadML + ".");
+        System.out.println("kcalorias: " + Kcal + ".");
 
     }
 
