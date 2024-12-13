@@ -30,7 +30,7 @@ public class AplicacionPrincipal {
             new Bebidas("Fanta de limon",20,1.99,330,89),
         };
         Pasteles[] pasteles = {
-            new Pasteles("Pastel de carne",10,3.5,true,77.6,542),
+            new Pasteles("Pastel de carne",10,3.5,false,77.6,542),
             new Pasteles("Pastel de fresa",10,2.99,true,128,357),
             new Pasteles("Pastel de chocolate",10,2.99,true,96.6,785),
             new Pasteles("Pastel de vainilla",10,2.49,true,283.6,645),

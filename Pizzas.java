@@ -39,11 +39,16 @@ public class Pizzas {
 
 
     protected void textoPizzasMostrarInformacion(){
+
         System.out.println("----");
-        System.out.println("Nombre: " + nombreProducto);
-        System.out.println("Lleva jamon? " + llevaJamon);
-        System.out.println("peso: " + peso + " gramos");
-        System.out.println("Kcalorias: " + Kcal);
+        System.out.println("Nombre: " + nombreProducto + ".");
+        System.out.println("Peso: " + peso + " gramos.");
+        System.out.println("Kcalorias: " + Kcal + ".");
+        if (llevaJamon == true) {
+            System.out.println("LLeva jamon.");
+        } else {
+            System.out.println("No lleva jamon.");
+        }
 
     }    
     /** Metodo que calcula el precio total de la cantidad que introduce el usuario
