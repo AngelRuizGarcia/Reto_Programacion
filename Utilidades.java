@@ -17,7 +17,7 @@ public class Utilidades{
         System.out.println("4. Bebidas");
         System.out.println("5. Finalizar compra y pagar");
         System.out.println("6. Salir de la tienda");
-        System.out.print("Introduce una opción: ");
+        System.out.print("Introduce una opcion: ");
         
     }
 
@@ -31,7 +31,7 @@ public class Utilidades{
         System.out.println("4. Pan de la abuela - 0.99 E");
         System.out.println("5. Mas informacion");
         System.out.println("6. Volver al menu principal");
-        System.out.print("Introduce una opción: ");
+        System.out.print("Introduce una opcion: ");
     }
 
     //Texto que se muestra al seleccionar bebidas
@@ -44,7 +44,7 @@ public class Utilidades{
         System.out.println("4. Fanta de limon - 1.99 E");
         System.out.println("5. Mas informacion");
         System.out.println("6. Volver al menu principal");
-        System.out.print("Introduce una opción: ");
+        System.out.print("Introduce una opcion: ");
     }
 
     //Texto que se muestra al seleccionar pasteles
@@ -57,7 +57,7 @@ public class Utilidades{
         System.out.println("4. Pastel de vainilla - 2.49 E");
         System.out.println("5. Mas informacion");
         System.out.println("6. Volver al menu principal");
-        System.out.print("Introduce una opción: ");
+        System.out.print("Introduce una opcion: ");
     }
 
     //Texto que se muestra al seleccionar pizzas
@@ -70,7 +70,7 @@ public class Utilidades{
         System.out.println("4. Pizza de Kebab - 2.49 E");
         System.out.println("5. Mas informacion");
         System.out.println("6. Volver al menu principal");
-        System.out.print("Introduce una opción: ");
+        System.out.print("Introduce una opcion: ");
     }
 
     //Texto que se muestra al pedir un producto
@@ -90,7 +90,7 @@ public class Utilidades{
         System.out.println("2. Agua");
         System.out.println("3. Coca-Cola");
         System.out.println("4. Fanta de limon");
-        System.out.print("Introduce una opción: ");
+        System.out.print("Introduce una opcion: ");
     }
 
     //Texto que se muestra cuando seleccionas mas informacion
@@ -102,7 +102,7 @@ public class Utilidades{
         System.out.println("2. Pizza Jamon y Queso");
         System.out.println("3. Pizza Carbonara");
         System.out.println("4. Pizza de Kebab");
-        System.out.print("Introduce una opción: ");
+        System.out.print("Introduce una opcion: ");
     }
     
     //Texto que se muestra cuando seleccionas mas informacion
@@ -114,7 +114,7 @@ public class Utilidades{
         System.out.println("2. Pastel de fresa");
         System.out.println("3. Pastel de chocolate");
         System.out.println("4. Pastel de vainilla");
-        System.out.print("Introduce una opción: ");
+        System.out.print("Introduce una opcion: ");
     }
     
     //Texto que se muestra cuando seleccionas mas informacion
@@ -126,7 +126,7 @@ public class Utilidades{
         System.out.println("2. Barra de pan");
         System.out.println("3. Pan de campo");
         System.out.println("4. Pan de la abuela");
-        System.out.print("Introduce una opción: ");
+        System.out.print("Introduce una opcion: ");
     }
 
 
@@ -172,7 +172,7 @@ public class Utilidades{
         System.out.println("----");
         System.out.println("1. Pago con tarjeta");
         System.out.println("2. Pago en efectivo");
-        System.out.print("Introduce una opción: ");
+        System.out.print("Introduce una opcion: ");
     }
 
     
