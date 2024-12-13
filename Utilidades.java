@@ -129,6 +129,19 @@ public class Utilidades{
         System.out.print("Introduce una opcion: ");
     }
 
+    //Texto que se muestra al seleccionar terminar compra y pagar
+    protected void textoPagar(){
+        System.out.println("----");
+        System.out.println("1. Pago con tarjeta");
+        System.out.println("2. Pago en efectivo");
+        System.out.print("Introduce una opcion: ");
+    }
+
+    protected void textoPagoConEfectivo(){
+        System.out.println("----");
+        System.out.print("Introduce tu importe para la compra: ");
+    }
+
 
     /*
      * Llamada a escaners para pedir numeros enteros, double o Strings
@@ -166,14 +179,6 @@ public class Utilidades{
         }
     }
 
-    
-    //Texto que se muestra al seleccionar terminar compra y pagar
-    protected void textoPagar(){
-        System.out.println("----");
-        System.out.println("1. Pago con tarjeta");
-        System.out.println("2. Pago en efectivo");
-        System.out.print("Introduce una opcion: ");
-    }
 
     
     /** 
@@ -290,12 +295,6 @@ public class Utilidades{
         }
     }
 
-    protected void textoPagoConEfectivo(){
-        System.out.println("----");
-        System.out.print("Introduce tu importe para la compra: ");
-    }
-
-    
     /** 
      * @throws InterruptedException Para poder hacer los sleeps del metodo
      *
