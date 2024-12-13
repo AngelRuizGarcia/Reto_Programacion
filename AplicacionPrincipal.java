@@ -70,7 +70,7 @@ public class AplicacionPrincipal {
             case 5: menuPagar(util0, sc, pizza, pan, bebidas, pasteles); break;
             case 6: break;
             
-            default: System.out.println("Numero introducido no valido."); break;
+            default: System.out.println("Numero introducido no valido."); menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza); break;
         }
     }
 
@@ -126,12 +126,15 @@ public class AplicacionPrincipal {
             case 5:
                 util0.textoProductoPanesMasInformacion();
                 menuPanMasInformacion(util0, sc, pizza, pan, bebidas, pasteles);
-             break;
+            break;
             case 6:
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
-             break;
+            break;
             
-            default: System.out.println("Numero introducido no valido."); break;
+            default: 
+                System.out.println("Numero introducido no valido."); 
+                menuPanes(util0, sc, pan, bebidas, pasteles, pizza);
+            break;
         }
 
     }
@@ -191,8 +194,10 @@ public class AplicacionPrincipal {
             case 6:
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
-            
-            default: System.out.println("Numero introducido no valido."); break;
+            default:
+                System.out.println("Numero introducido no valido.");
+                menuPizzas(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
         }
     }
 
@@ -250,8 +255,10 @@ public class AplicacionPrincipal {
             case 6:
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
-            
-            default: System.out.println("Numero introducido no valido."); break;
+            default:
+                System.out.println("Numero introducido no valido.");
+                menuPasteles(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
         }
     }
 
@@ -311,7 +318,10 @@ public class AplicacionPrincipal {
                 menuPrincipal(util0, sc, pan, bebidas, pasteles, pizza);
             break;
             
-            default: System.out.println("Numero introducido no valido."); break;
+            default:
+                System.out.println("Numero introducido no valido.");
+                menuBebidas(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
         }
     }
 
@@ -354,8 +364,10 @@ public class AplicacionPrincipal {
                     menuPagar(util0, sc, pizza, pan, bebidas, pastel);
                 }
             break;
-            
-            default: System.out.println("Numero introducido no valido."); break;
+            default:
+                System.out.println("Numero introducido no valido.");
+                menuPagar(util0, sc, pizza, pan, bebidas, pastel);
+            break;
         }
     }
 
@@ -388,8 +400,10 @@ public class AplicacionPrincipal {
                 bebidas[3].textoBebidasMostrarInformacion();
                 menuBebidas(util0, sc, pizza, pan, bebidas, pasteles);
             break;
-
-            default: System.out.println("Numero introducido no valido. "); break;
+            default:
+            System.out.println("Numero introducido no valido. ");
+            menuBebidasMasInformacion(util0, sc, pizza, pan, bebidas, pasteles); 
+            break;
 
         }
     }
@@ -424,7 +438,10 @@ public class AplicacionPrincipal {
                 menuPizzas(util0, sc, pizza, pan, bebidas, pasteles);
             break;
 
-            default: System.out.println("Numero introducido no valido. "); break;
+            default:
+                System.out.println("Numero introducido no valido. ");
+                menuPizzasMasInformacion(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
 
         }
     }
@@ -458,8 +475,10 @@ public class AplicacionPrincipal {
                 pasteles[3].textoPastelesMostrarInformacion();
                 menuPasteles(util0, sc, pizza, pan, bebidas, pasteles);
             break;
-
-            default: System.out.println("Numero introducido no valido. "); break;
+            default:
+                System.out.println("Numero introducido no valido. ");
+                menuPastelesMasInformacion(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
 
         }
     }
@@ -494,7 +513,10 @@ public class AplicacionPrincipal {
                 menuPanes(util0, sc, pan, bebidas, pasteles, pizza);
             break;
 
-            default: System.out.println("Numero introducido no valido. "); break;
+            default:
+                System.out.println("Numero introducido no valido. ");
+                menuPanMasInformacion(util0, sc, pizza, pan, bebidas, pasteles);
+            break;
 
         }
     }
