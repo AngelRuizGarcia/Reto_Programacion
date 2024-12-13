@@ -11,19 +11,19 @@ public class Pizzas {
     protected double precioTotal;
 
     //ATRIBUTOS OPCIONALES DE INFORMACION
-    protected boolean llevaGluten; 
+    protected boolean llevaJamon; 
     protected double peso;
     protected int Kcal;
 
 
 
 
-    public Pizzas(String nombreProducto, int cantidadProducto, double precioProducto, boolean llevaGluten, double peso, int Kcal){
+    public Pizzas(String nombreProducto, int cantidadProducto, double precioProducto, boolean llevaJamon, double peso, int Kcal){
         this.nombreProducto = nombreProducto;
         this.cantidadProducto = cantidadProducto;
         this.cantidadRestante = cantidadProducto;
         this.precioProducto = precioProducto;
-        this.llevaGluten = llevaGluten;
+        this.llevaJamon = llevaJamon;
         this.peso = peso;
         this.Kcal = Kcal;
     }
@@ -41,7 +41,7 @@ public class Pizzas {
     protected void textoPizzasMostrarInformacion(){
         System.out.println("----");
         System.out.println("Nombre: " + nombreProducto);
-        System.out.println("Lleva gluten? " + llevaGluten);
+        System.out.println("Lleva jamon? " + llevaJamon);
         System.out.println("peso: " + peso + " gramos");
         System.out.println("Kcalorias: " + Kcal);
 
